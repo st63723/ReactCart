@@ -8,8 +8,9 @@ export const CART_JEWELLERY = "@app/common/CART_JEWELLERY";
 export const CART_MEN = "@app/common/CART_MEN";
 export const CART_WOMEN = "@app/common/CART_WOMEN";
 export const CART_ELECTRONICS = "@app/common/CART_ELECTRONICS";
+export const CHECKOUT = "@app/common/CHECKOUT";
 
-const initialState = { data: [], loading: false, cart: [] , datas:[], wishlist:[], men:[], women:[], jewellery:[], electronics:[] }
+const initialState = { checkout:[], data: [], loading: false, cart: [] , datas:[], wishlist:[], men:[], women:[], jewellery:[], electronics:[] }
 
 /*const addItemToCart = (state, action) => {
   const x = [action.payload];
@@ -41,6 +42,11 @@ const products = (state = initialState, action) => {
       return {
         ...state,
         data: action.payload
+      };
+      case CHECKOUT:
+      return {
+        ...state,
+        checkout: action.payload
       };
       case SET_MAIN_PRODUCTS:
         return {
@@ -92,6 +98,10 @@ const products = (state = initialState, action) => {
 };
 
 export default products;
+export const checkout = list => ({
+  type: CHECKOUT,
+  payload: list
+});
 
 export const setProducts = list => ({
   type: SET_PRODUCTS,

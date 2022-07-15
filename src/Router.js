@@ -9,6 +9,8 @@ import HomePageComponent from "./components/Home/HomePageComponent.js";
 import ProductsComponent from "./components/Products/ProductsComponent";
 import ProductsPageComponent from "./components/Products/ProductsPageComponent";
 import ShippingInformation from "./components/Checkout/ShippingInformation";
+import ShippingMethod from "./components/Checkout/ShippingMethod";
+import PaymentInformation from "./components/Checkout/PaymentInformation";
 
  const Router = () => (
   <BrowserRouter>
@@ -25,6 +27,10 @@ import ShippingInformation from "./components/Checkout/ShippingInformation";
           <Route path="/products/:productId" element={ <ProductDetail/>} />
           <Route path="/ShoppingBag" element={ <ShoppingBag /> } />
           <Route path="/ShippingInformation" element={ <ShippingInformation /> } />
+          <Route path="/ShippingMethod" element={ <ShippingMethod /> } />
+          <Route path="/PaymentInformation" element={ <PaymentInformation /> } />
+          <Route path="/ReviewOrder" element={ <ReviewOrder /> } />
+          <Route path="/SuccessfullPage" element={ <SuccessfullPage /> } />
       </Routes>
     </App>
   </BrowserRouter>
