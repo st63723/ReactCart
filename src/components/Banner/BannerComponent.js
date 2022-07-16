@@ -11,7 +11,7 @@ function BannerComponent() {
     const navigate = useNavigate();
     const productsMain = useSelector(store => store.products.datas);
     const shopNow = () => {
-        dispatch(setProducts(productsMain));
+       // dispatch(setProducts(productsMain));
         navigate('/Products')
     }
     return (

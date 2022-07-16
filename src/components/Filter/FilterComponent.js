@@ -15,6 +15,7 @@ function FilterComponent() {
   const menItems = useSelector(store => store.products.men);
   const womenItems = useSelector(store => store.products.women);
   const electronicItems = useSelector(store => store.products.electronics);
+  const allChecksVals = useSelector(store => store.products.jewellery)
     let url = "";
 
  /* const jewelleryCheckbox = () =>{
@@ -23,48 +24,83 @@ function FilterComponent() {
 } */
 
 useEffect(() => {
-  console.log([...menItems]);
-  const result = productsMain.filter(x => 
-    x.category == "jewelery"
-  );
-  dispatch(setCartJewellery(result));
-
-  const result1 = productsMain.filter(x => 
-    x.category == "men's clothing"
-  );
-  dispatch(setCartMen(result1));
-
-  const result2 = productsMain.filter(x => 
-    x.category == "electronics"
-  );
-  dispatch(setCartElectronics(result2));
-
-  const result3 = productsMain.filter(x => 
-    x.category == "women's clothing"
-  );
-  dispatch(setCartWomen(result3));
+  
 
      }, []);
 
 
-    const checkedResults =[];
+    const checkedResults =[...allChecksVals];
     const cartCheckbox = (e) => {
         var s = e.target.value;
         if (e.target.checked) {
           checkedResults.concat(s);
-          alert(checkedResults);
-             checkedResults.push(s);
-           // dispatch(setProducts(checkedResults));
+             checkedResults.push(s);          
         } else {
             var index = checkedResults.indexOf(s);
             if (index > -1) {
               checkedResults.splice(index, 1);
+            } 
+            if(checkedResults.length == 0){
+              dispatch(setProducts(productsMain));
             }
-            dispatch(setProducts(productsMain));  
         }
+        let totalVals=[];
+       /* checkedResults.forEach(val => {
+                    if(val == 'womenItems'){
+                      let result = productsMain.filter(x => 
+                          x.category == "women's clothing"
+                        );
+                        Array.prototype.push.apply(totalVals, result);
+              } else if(val == 'menItems'){
+                  let result = productsMain.filter(x => 
+                      x.category == "men's clothing"
+                  );
+                  Array.prototype.push.apply(totalVals, result);
+              } else if(val == 'jewelleryItems'){
+                  let result = productsMain.filter(x => 
+                      x.category == "jewelery"
+                  );
+                  Array.prototype.push.apply(totalVals, result);
+              } else if(val == 'electronicItems'){
+                  let result = productsMain.filter(x => 
+                      x.category == "electronics"
+                  );
+                  Array.prototype.push.apply(totalVals, result);
+              }
+        }); */
+        var a = checkedResults;
+        for(let i=0; i < a.length; i++){
+                    if(a[i] == 'womenItems'){
+                      let result = productsMain.filter(x => 
+                          x.category == "women's clothing"
+                        );
+                        Array.prototype.push.apply(totalVals, result);
+              } else if(a[i] == 'menItems'){
+                  let result = productsMain.filter(x => 
+                      x.category == "men's clothing"
+                  );
+                  Array.prototype.push.apply(totalVals, result);
+              } else if(a[i] == 'jewelleryItems'){
+                  let result = productsMain.filter(x => 
+                      x.category == "jewelery"
+                  );
+                  Array.prototype.push.apply(totalVals, result);
+              } else if(a[i] == 'electronicItems'){
+                  let result = productsMain.filter(x => 
+                      x.category == "electronics"
+                  );
+                  Array.prototype.push.apply(totalVals, result);
+              } 
+
+              if(a.length - 1 === i) {
+                
+                dispatch(setCartJewellery(checkedResults));
+                dispatch(setProducts(totalVals));
+              }
+        }
+        
     }
-
-
+  
 
     return (
     <>  

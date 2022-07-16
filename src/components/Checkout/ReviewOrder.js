@@ -26,10 +26,10 @@ function ReviewOrder() {
       const PaymentInformationEdit = () =>{
         navigate('/PaymentInformation');
       } 
-     const PlaceOrder=()=>{
+      const onSubmit = (data) => {
         navigate('/SuccessfullPage');
-     } 
-      
+          console.log(data);
+        };      
 
     return (
     <>
@@ -94,9 +94,8 @@ function ReviewOrder() {
                       </div>
                       
                       <h4 className='payment--information--heding'>2. Payment Information</h4>
-                            
                       <div className='checkout--button'>
-                        <button type='button' className='blue--button' onClick={PlaceOrder}>PLACE ORDER</button>     
+                        <input type='submit' className='blue--button' value="PLACE ORDER" />          
                       </div>
                     </form>
 

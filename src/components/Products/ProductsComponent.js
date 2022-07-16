@@ -26,7 +26,7 @@ const productsMain = useSelector(store => store.products.datas);
     const [postsPerPage, setPostsPerPage] = useState(10);
      const dispatch = useDispatch();
      const products = useSelector(store => store.products.data);
-
+     const location = useLocation();
     /* useEffect(() => {
       if(products.length == 0){
        Axios.get('https://fakestoreapi.com/products').then(res => {
@@ -71,11 +71,7 @@ const productsMain = useSelector(store => store.products.datas);
     
   
 }, [dispatch]); */
-/* useEffect((inData1) => {
-    if(inData1){
-     dispatch(setProducts(inData1));
-    }
-}, [dispatch]);  */
+  
 
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);

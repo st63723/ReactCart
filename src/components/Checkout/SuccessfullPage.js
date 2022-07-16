@@ -1,13 +1,13 @@
 import React from 'react';
 import { useState } from "react";
-import './PaymentInformation.scss';
+import './SuccessfullPage.scss';
 import { Link } from "react-router-dom";
 import { useForm } from 'react-hook-form';
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import EditIcon from '../../assets/svg/edit.svg';
 
-function ReviewOrder() {
+function SuccessfullPage() {
     const { register, handleSubmit, setValue, formState: { errors }} = useForm();
     const [count, setCount] = useState(0);
     const cartItems = useSelector(state => state.products.cart);
@@ -28,12 +28,11 @@ function ReviewOrder() {
      
     return (
     <>
-    <div className="inner-container shipping--information payment-method review-order">
-            <h1 className="checkout--heading">Order Successfull</h1>
+    <div className="inner-container shipping--information payment-method review-order successfull--page">
+            <h1 className="Order--heading">Order Successfull</h1>
             <div className='aem-Grid aem-Grid--12' aria-label="Add Cart Details">
                 <div className="aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12">
-                <form onSubmit={handleSubmit(onSubmit)}>
-                      <h2 className="guest--checkout">Order Number 1700834</h2>
+                      <h2 className="order--number">Order Number 1700834</h2>
                       
                       <div className="shipping--information--edit">
                         <div className='aem-Grid aem-Grid--12 form--row'>
@@ -75,7 +74,6 @@ function ReviewOrder() {
                             </div>
                         </div>     
                       </div>
-                    </form>
 
                    
                      {/* Added Cart items list start*/} 
@@ -111,5 +109,5 @@ function ReviewOrder() {
     )
 }
 
-export default ReviewOrder;
+export default SuccessfullPage;
 

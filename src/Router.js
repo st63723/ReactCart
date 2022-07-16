@@ -11,6 +11,8 @@ import ProductsPageComponent from "./components/Products/ProductsPageComponent";
 import ShippingInformation from "./components/Checkout/ShippingInformation";
 import ShippingMethod from "./components/Checkout/ShippingMethod";
 import PaymentInformation from "./components/Checkout/PaymentInformation";
+import ReviewOrder from "./components/Checkout/ReviewOrder";
+import SuccessfullPage from "./components/Checkout/SuccessfullPage";
 
  const Router = () => (
   <BrowserRouter>

@@ -27,13 +27,98 @@ function HeaderComponent() {
     } 
 
     useEffect(() => {
-        if(products.length == 0){
+         if(products.length == 0){
          Axios.get('https://fakestoreapi.com/products').then(res => {
                  const data = res.data;
                  dispatch(setProducts(data));  
                  dispatch(setMainProducts(data));   
                })
-             }
+             } 
+            /* const x = [
+                {   "id": 1,
+                    "title": "saree",
+                    "image": "./json/1.jpg",
+                    "category": "women's clothing"
+                },
+                {   "id": 2,
+                    "title": "saree",
+                    "image": "./json/1.jpg",
+                    "category": "women's clothing"
+                },
+                {   "id": 3,
+                    "title": "saree",
+                    "image": "./json/1.jpg",
+                    "category": "women's clothing"
+                },
+                {   "id": 4,
+                    "title": "saree",
+                    "image": "./json/1.jpg",
+                    "category": "women's clothing"
+                },
+                {   "id": 5,
+                    "title": "men",
+                    "image": "./json/2.jpg",
+                    "category": "men's clothing"
+                },
+                {   "id": 6,
+                    "title": "men",
+                    "image": "./json/2.jpg",
+                    "category": "men's clothing"
+                },
+                {   "id": 7,
+                    "title": "men",
+                    "image": "./json/2.jpg",
+                    "category": "men's clothing"
+                },
+                {   "id": 8,
+                    "title": "men",
+                    "image": "./json/2.jpg",
+                    "category": "men's clothing"
+                },
+                {   "id": 9,
+                    "title": "men",
+                    "image": "./json/3.jpg",
+                    "category": "jewelery"
+                },
+                {   "id": 10,
+                    "title": "men",
+                    "image": "./json/3.jpg",
+                    "category": "jewelery"
+                },
+                {   "id": 11,
+                    "title": "men",
+                    "image": "./json/3.jpg",
+                    "category": "jewelery"
+                },
+                {   "id": 12,
+                    "title": "men",
+                    "image": "./json/3.jpg",
+                    "category": "jewelery"
+                },
+                {   "id": 13,
+                "title": "electronics",
+                "image": "./json/4.jpg",
+                "category": "electronics"
+                },
+                {   "id": 14,
+                    "title": "electronics",
+                    "image": "./json/4.jpg",
+                    "category": "electronics"
+                },
+                {   "id": 15,
+                    "title": "electronics",
+                    "image": "./json/4.jpg",
+                    "category": "electronics"
+                },
+                {   "id": 16,
+                    "title": "electronics",
+                    "image": "./json/4.jpg",
+                    "category": "electronics"
+                }
+            ]
+            const data = x;
+                 dispatch(setProducts(data));  
+                 dispatch(setMainProducts(data));  */
            }, []);
 
     useEffect(() => {
