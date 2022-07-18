@@ -9,7 +9,7 @@
                 outline-offset: 0px;
                 outline: 0px solid $white-color;
             }
-            @include tablet-portrait{
+            @include min769x{
                 outline-offset: -10px;
                 outline: 10px solid $white-color;
             }
@@ -17,6 +17,12 @@
     }
     .home--shop--devices_text{
         position: relative;
+        @include phone-only{
+            text-align: center;
+        }
+        @include min769x{
+            text-align: left;
+        }
         article{
             display: $display-flex;
             justify-content: $t-align-center;
@@ -28,7 +34,7 @@
                 width: 95%;
                 margin: -25px auto 0 auto;
             }
-            @include tablet-portrait{
+            @include min769x{
                 width: 100%;
                 margin: initial;
             }
@@ -67,7 +73,7 @@
                 left: 41px;
                 top: -45px;
             }
-            @include tablet-portrait{
+            @include min769x{
                 bottom: 36px;
                 left: -28px;
                 top: initial;

@@ -7,19 +7,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { setPaymentInformation } from '../../reducers/form';
 import { useNavigate } from "react-router-dom";
 import EditIcon from '../../assets/svg/edit.svg';
+import PriceSummary from './PriceSummary';
 
 function PaymentInformation() {
     const { register, handleSubmit, setValue, formState: { errors }} = useForm();
     const [count, setCount] = useState(0);
     const cartItems = useSelector(state => state.products.cart);
     const getFormShIn = useSelector(state => state.form.shippingInformation);
-    const getFormShMe = useSelector(state => state.form.shippingMethod);
+    const getFormShMe = useSelector(state => state.form.shippingMethod); 
+    const getFormPayIn = useSelector(state => state.form.paymentInformation);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const onSubmit = (data) => {
       dispatch(setPaymentInformation(data));
-      // navigate('/ShippingInformation');
+       navigate('/ReviewOrder');
         console.log(data);
       };
     const ShippingInformationEdit = () =>{
@@ -29,12 +31,20 @@ function PaymentInformation() {
         navigate('/ShippingMethod');
       }  
     useEffect(() => {
-      setValue("ShippingMethod", getFormShIn.ShippingMethod); 
+      // setValue("ShippingMethod", getFormShIn.ShippingMethod); 
+        setValue("CreditCard", getFormPayIn.CreditCard); 
+        setValue("NameOnCard", getFormPayIn.NameOnCard);
+        setValue("CreditCardNumber", getFormPayIn.CreditCardNumber);
+        setValue("ExpirationDate", getFormPayIn.ExpirationDate);
+        setValue("CVV", getFormPayIn.CVV);  
+        setValue("BillingAddress", getFormPayIn.BillingAddress);
+        setValue("Paypal", getFormPayIn.Paypal);
+   
   }, []);
 
     return (
     <>
-    <div className="inner-container shipping--information payment-method">
+    <div className="inner-container shipping--information shipping--method--page payment-method">
             <h1 className="checkout--heading">Checkout</h1>
             <div className='aem-Grid aem-Grid--12' aria-label="Add Cart Details">
                 <div className="aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12">
@@ -81,15 +91,16 @@ function PaymentInformation() {
                       <h4 className='payment--information--heding'>2. Payment Information</h4>
                       <div className='payment--information'>
                         <div className='aem-Grid aem-Grid--12 margin-bottom-20'>
-                          <div className="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12">
+                          <div className="aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12">
                             <div className="form--group credit--card">
-                                <input type="radio" checked id='creditCart' className='creditcard' name='creditCard' {...register("creditCard")} /> 
+                                <input type="radio" checked id='creditCart' className='creditcard' value="Credit Card" name='CreditCard' {...register("CreditCard", {required: "Required"
+                                })} /> 
                                 <label for="creditCart"> Credit Card</label>
                             </div>
                           </div>
                         </div>  
                         <div className='aem-Grid aem-Grid--12 margin-bottom-20'>
-                          <div className="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12"> 
+                          <div className="aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12"> 
                             <div className="form--group">
                                 <label> Name on Card</label>
                                 <input placeholder=''
@@ -102,7 +113,7 @@ function PaymentInformation() {
                         </div>  
                         
                         <div className='aem-Grid aem-Grid--12 margin-bottom-20'>   
-                          <div className="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12">  
+                          <div className="aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12">  
                             <div className="form--group">
                                 <label> Credit Card Number</label>
                                 <input placeholder=''
@@ -139,17 +150,18 @@ function PaymentInformation() {
                           </div>
                         </div> 
                         <div className='aem-Grid aem-Grid--12 margin-bottom-20'>
-                          <div className="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12">
+                          <div className="aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12">
                             <div className="form--group credit--card">
-                                <input type="checkbox" checked className='creditcard' name='billingAddress' value="Billing address same as shipping address" {...register("billingAddress")} /> 
+                                <input type="checkbox" className='creditcard' name='BillingAddress' {...register("BillingAddress", {required: "Required" })} value="Billing address same as shipping address" /> 
                                 <label for="standardShipping"> Billing address same as shipping</label>
+                                {errors.BillingAddress && <p className="errorMsg">{errors.BillingAddress.message}</p>} 
                             </div>
                           </div>
                         </div>
                         <div className='aem-Grid aem-Grid--12 margin-bottom-20'>
                           <div className="aem-GridColumn aem-GridColumn--default--12 paypal--border">
                             <div className="form--group credit--card">
-                                <input type="radio" className='creditcard' name='Paypal' value="Paypal" {...register("Paypal")} /> 
+                                <input type="radio" className='creditcard' name='Paypal' value="Paypal" {...register("Paypal", {required: "Required" })}  /> 
                                 <label for="standardShipping"> Paypal</label>
                                 {errors.Paypal && <p className="errorMsg">{errors.Paypal.message}</p>} 
                             </div>
@@ -163,38 +175,7 @@ function PaymentInformation() {
                     </form>
                 </div>
                 
-                <div className="pricing-summary-box aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--12">
-                    <div className="pricing-summary" role="Added Cart items Total Values">
-                        <aside>
-                        <h6>Pricing Summary</h6>
-                        <div className="price-row">
-                            <span className="left-val">Subtotal</span>
-                            <span className="left-val"><strong>$ {Math.round(cartItems.reduce((total, item)=>total+(item.price*item.quantity),count)*  100) / 100}</strong></span>
-                        </div>
-                        <div className="price-row">
-                            <span className="left-val">Coupon</span>
-                            <span className="left-val"> $ 1</span>
-                        </div>
-                        <div className="price-row">
-                            <span className="left-val">Gift Cart</span>
-                            <span className="left-val"> $ 2</span>
-                        </div>
-                        <div className="price-row">
-                            <span className="left-val">Estimated Tax</span>
-                            <span className="left-val">$ 1</span>
-                        </div>
-                        <div className="price-row">
-                            <span className="left-val">Estimated Shipping</span>
-                            <span className="left-val">Free</span>
-                        </div>
-                        <div className="price-row">
-                            <span className="left-val">Estimated Total</span>
-                            <span className="left-val"><strong>$ {Math.round((cartItems.reduce((total, item)=>total+(item.price*item.quantity),count)+2) * 100) / 100}</strong></span>
-                        </div>
-                       </aside> 
-                    </div>
-                </div>
-                {/* Cart items Pricing details end*/}  
+                <PriceSummary /> 
                 </div>
             </div>    
     </>

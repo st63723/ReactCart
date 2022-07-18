@@ -10,60 +10,68 @@
     border:0;
     color: $white-color;
 }
-.shipping--information--edit {
-    border: 1px solid $gray-light;
-    padding: 20px 25px;
-    border-radius: 2px;
-    span{
-        display: $display-block;
-    }
-    .shipping--information--edit_heading {
-        font-family: $muli-semibold;
-        margin: 0;
-        display: inline-block;
-    }
-    .edit {
-        cursor: pointer;
-        float: right;
-        color: $primary-color;
-        width: 55px;
-        .edit--icon {
-            width: 16px;
-            margin-right: 8px;
-        }
-        .edit--title {
-            font-family: $muli-semibold;
-            float: right;
-        }
-    }
-}
-.shipping--method {
-    .form--group{
-        display: table;
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    .method--rows{
-        border-top: 1px solid $gray-light;
-        margin-top: 40px;
-        .method--rows__title{
-            font-size: $font-size-20;
-            font-family: $muli-semibold;
-            border-bottom: 1px solid $gray-light;
-            padding: 10px 0px;
+.shipping--method--page{
+    .shipping--information--edit {
+        border: 1px solid $gray-light;
+        padding: 20px 25px;
+        border-radius: 2px;
+        span{
             display: $display-block;
-            color: $gray;
+        }
+        .shipping--information--edit_heading {
+            font-family: $muli-semibold;
+            margin: 0;
+            display: inline-block;
+        }
+        .edit {
+            cursor: pointer;
+            float: right;
+            color: $primary-color;
+            width: 55px;
+            .edit--icon {
+                width: 16px;
+                margin-right: 8px;
+            }
+            .edit--title {
+                font-family: $muli-semibold;
+                float: right;
+            }
         }
     }
-    .form--group{
-        .standardShipping{
-            float: left;
-            width: 25px;
-            margin-top: -5px;
-            margin-right: 8px;
+    .shipping--method {
+        .form--group{
+            display: table;
+            width: 100%;
+            margin-bottom: 10px;
         }
+        .method--rows{
+            border-top: 1px solid $gray-light;
+            margin-top: 40px;
+            .method--rows__title{
+                font-size: $font-size-20;
+                font-family: $muli-semibold;
+                border-bottom: 1px solid $gray-light;
+                padding: 10px 0px;
+                display: $display-block;
+                color: $gray;
+            }
+        }
+        .form--group{
+            .standardShipping{
+                float: left;
+                width: 25px;
+                margin-top: -5px;
+                margin-right: 8px;
+            }
+    }
    }
-}
+   form{
+    margin-right: 20px;
+   }
+   .pricing-summary-box {
+        margin-top: 55px;
+    }
+}   
 
 
 /*

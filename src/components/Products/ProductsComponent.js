@@ -20,6 +20,7 @@ function ProductsComponent() {
    // const [inData1, setHideLightbox1] = useState();
 const productsMain = useSelector(store => store.products.datas);
    const [dropdownValue, setDropdownValue] = useState([]);
+   const [sortAllProducts, setSortAllProducts] = useState(false);
    const [changeHeartIcon, setChangeHeartIcon] = useState(false);
     const [hideLightbox, setHideLightbox] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
@@ -88,6 +89,18 @@ const productsMain = useSelector(store => store.products.datas);
             dispatch(setProducts(inData)); 
         }
       }
+    const sortProducts = (value) => {
+        var x = value;
+        if(x == "low"){
+            var inData = products?.sort((a, b) => (a.price > b.price ? 1 : -1));
+            setDropdownValue(x);
+            dispatch(setProducts(inData));  
+        } else {
+            var inData = products?.sort((a, b) => (a.price > b.price ? -1 : 1));
+            setDropdownValue(x);
+            dispatch(setProducts(inData)); 
+        }
+    }  
 
       const HeartIconEvent = (e) =>{
             const x = e.target.id;
@@ -140,8 +153,8 @@ const productsMain = useSelector(store => store.products.datas);
                     Filter Results
                 </span>
                 <span className='filters--sort__products'>
-                    <img src={ArrowDownIcon} alt="Sort Products icon" />
-                    <img src={ArrowUpIcon} alt="Sort Products icon" />
+                    <img src={ArrowDownIcon}  onClick={()=>sortProducts('low')} alt="Sort Products icon" />
+                    <img src={ArrowUpIcon}  onClick={()=>sortProducts('high')} alt="Sort Products icon" />
                     Sort Products
                 </span>
             </div>

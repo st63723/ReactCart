@@ -72,7 +72,7 @@
             color: #181C24;
             text-decoration: underline;
             @include phone-only{
-                padding-right: 10px;
+                margin-right: 15px;
             }
             @include min769{
                 padding-right: 10px;
@@ -87,10 +87,13 @@
         }  
          .filters--sort__products{
             img{
-                height: 13px;
+                height: 15px;
+                width: 15px;
+                cursor: pointer;
             }
             img:last-child{
                 padding-right: 5px;
+                margin-left: 3px;
             }
          }
     }

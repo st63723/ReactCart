@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import {deleteToCart} from "../../reducers/products";
 import { Link } from "react-router-dom";
 import CollapsibleComponent from "../Collapsible/CollapsibleComponent";
-
+import PriceSummary from '../Checkout/PriceSummary';
 
 function ShoppingBag() {
   const cartItems = useSelector(state => state.products.cart);
@@ -123,7 +123,7 @@ const removeItem = (product) =>{
 
                 </div>
 
-                {/* Cart items Pricing details start*/}  
+                {/* Cart items Pricing details start
                 <div className="pricing-summary-box aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--12">
                     <div className="pricing-summary" role="Added Cart items Total Values">
                         <aside>
@@ -167,7 +167,7 @@ const removeItem = (product) =>{
                     </div>
                 </div>
                 {/* Cart items Pricing details end*/}  
-
+                <PriceSummary />
             </div>    
     </div> : <p className="no-cart" aria-label="No Products Description">No Products added in your Cart</p>
   );

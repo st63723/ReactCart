@@ -13,6 +13,7 @@ import LoaderComponent from "../Loader/LoaderComponent";
 import { Rating } from 'react-simple-star-rating';
 import ReadMoreComponent from '../ReadMore/ReadMoreComponent';
 import {setWishlist } from "../../reducers/products";
+import { useNavigate } from "react-router-dom";
 
 function ProductDetail() {
     const productsMain = useSelector(store => store.products.datas);
@@ -21,6 +22,7 @@ function ProductDetail() {
     const cartItems = useSelector(store => store.products.cart);
     const dispatch = useDispatch();
     const {productId} = useParams();
+    const navigate = useNavigate();
    // const [products, setProducts] = useState([]);
     const [count, setCount] = useState(0);
     
@@ -60,6 +62,7 @@ function ProductDetail() {
                // return { cartItems };
 
             dispatch(addToCart(cartItemsTotal));
+            navigate('/ShoppingBag');
         } else {
             alert("Please select Product Quantity");
         }

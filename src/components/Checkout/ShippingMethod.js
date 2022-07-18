@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setShippingMethod } from '../../reducers/form';
 import { useNavigate } from "react-router-dom";
 import EditIcon from '../../assets/svg/edit.svg';
+import PriceSummary from './PriceSummary';
 
 function ShippingMethod() {
     const { register, handleSubmit, setValue, formState: { errors }} = useForm();
@@ -31,7 +32,7 @@ function ShippingMethod() {
 
     return (
     <>
-    <div className="inner-container shipping--information">
+    <div className="inner-container shipping--information shipping--method--page">
             <h1 className="checkout--heading">Checkout</h1>
             <div className='aem-Grid aem-Grid--12' aria-label="Add Cart Details">
                 <div className="aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12">
@@ -76,7 +77,7 @@ function ShippingMethod() {
                                 <input type="radio" className='standardShipping' id='nextDayDeliver' name='nextDayDeliver' value="Next Day Delivery (Next business days via FedEx) $53.61" {...register("ShippingMethod", {required: "Required"
                                 })} /> 
                                 <label for="nextDayDeliver"> Next Day Delivery (Next business days via FedEx) $53.61</label>
-                                {errors.Country && <p className="errorMsg">{errors.PhoneNumber.message}</p>}   
+                                {errors.ShippingMethod && <p className="errorMsg">{errors.ShippingMethod.message}</p>}   
                             </div>
                           </div>
                         </div>
@@ -93,37 +94,7 @@ function ShippingMethod() {
                     </div>
                 </div>
                 
-                <div className="pricing-summary-box aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--12">
-                    <div className="pricing-summary" role="Added Cart items Total Values">
-                        <aside>
-                        <h6>Pricing Summary</h6>
-                        <div className="price-row">
-                            <span className="left-val">Subtotal</span>
-                            <span className="left-val"><strong>$ {Math.round(cartItems.reduce((total, item)=>total+(item.price*item.quantity),count)*  100) / 100}</strong></span>
-                        </div>
-                        <div className="price-row">
-                            <span className="left-val">Coupon</span>
-                            <span className="left-val"> $ 1</span>
-                        </div>
-                        <div className="price-row">
-                            <span className="left-val">Gift Cart</span>
-                            <span className="left-val"> $ 2</span>
-                        </div>
-                        <div className="price-row">
-                            <span className="left-val">Estimated Tax</span>
-                            <span className="left-val">$ 1</span>
-                        </div>
-                        <div className="price-row">
-                            <span className="left-val">Estimated Shipping</span>
-                            <span className="left-val">Free</span>
-                        </div>
-                        <div className="price-row">
-                            <span className="left-val">Estimated Total</span>
-                            <span className="left-val"><strong>$ {Math.round((cartItems.reduce((total, item)=>total+(item.price*item.quantity),count)+2) * 100) / 100}</strong></span>
-                        </div>
-                       </aside> 
-                    </div>
-                </div>
+                <PriceSummary /> 
                 {/* Cart items Pricing details end*/}  
                 </div>
                 

@@ -1,7 +1,7 @@
 @import './../../common-scss/variables.scss';
 
 @mixin buttonc {
-    width: 247px;
+    
     height: 40px;
     display: inline-flex;
     justify-content: $t-align-center;
@@ -9,6 +9,15 @@
     border-radius: 28px;
     border:0;
     color: $white-color;
+    @include phone-only{
+        width: 247px;
+    }
+    @include min769x{
+        width: 180px;
+    }
+    @include min1200{
+        width: 247px;
+    }
 }
 
 .pricing-summary {
@@ -17,10 +26,12 @@
     @include phone-only{
         border: 1px solid $gray-light;
         padding: 10px;
+        margin-top:20px;
     }
     @include tablet-portrait{
         border: 1px solid $gray-light;
         padding: 18px 25px;
+        margin-top:10px;
     }
     h6{
         font-family: $muli-semibold;
@@ -69,9 +80,13 @@
             width:87px;
         }
     }
-    .buttons{
+   
+    .checkout--button-show{
         width: 100%;
         display: $display-block;
         text-align: $t-align-center;
+    }
+    .checkout--button-hide{
+        display: none;
     }
 }
