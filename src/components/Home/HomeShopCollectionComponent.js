@@ -1,8 +1,18 @@
 import React from 'react'
 import './HomeShopCollectionComponent.scss'
 import { Link } from "react-router-dom";
+import { setProducts } from "../../reducers/products";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function HomeShopCollectionComponent() {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const productsMain = useSelector(store => store.products.datas);
+    const shopNow = () => {
+        dispatch(setProducts(productsMain));
+        navigate('/Products')
+    }
     return (
         <>
         <section className='inner-container'>
@@ -18,10 +28,10 @@ function HomeShopCollectionComponent() {
                         <p className='home--shop--collection__row__subtitle'>Lorem Ipsum Dolor Tempor</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore dolore magna lorem ipsum dolor sit dolore magna.</p>
                         <div className='home--shop--collection__row__buttons'>
-                            <button type='button' className='transparent--button'>
+                            <button type='button' onClick={shopNow} className='transparent--button'>
                                 SHOP COLLECTION
                             </button>
-                            <button type='button' className='blue--button'>
+                            <button type='button' onClick={shopNow} className='blue--button'>
                                 SHOP NOW
                             </button>
                         </div>

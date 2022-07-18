@@ -10,73 +10,16 @@
     border:0;
     color: $white-color;
 }
-.shipping--information--edit {
-    border: 1px solid $gray-light;
-    padding: 20px 25px;
-    border-radius: 2px;
-    span{
-        display: $display-block;
-    }
-    .shipping--information--edit_heading {
-        font-family: $muli-semibold;
-        margin: 0;
-        display: inline-block;
-    }
-    .edit {
-        cursor: pointer;
-        float: right;
-        color: $primary-color;
-        width: 55px;
-        .edit--icon {
-            width: 16px;
-            margin-right: 8px;
-        }
-        .edit--title {
-            font-family: $muli-semibold;
-            float: right;
-        }
-    }
-}
-.shipping--method {
-    .form--group{
-        display: table;
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    .method--rows{
-        border-top: 1px solid $gray-light;
-        margin-top: 40px;
-        .method--rows__title{
-            font-size: $font-size-20;
-            font-family: $muli-semibold;
-            border-bottom: 1px solid $gray-light;
-            padding: 10px 0px;
-            display: $display-block;
-            color: $gray;
-        }
-    }
-    .form--group{
-        .standardShipping{
-            float: left;
-            width: 25px;
-            margin-top: -5px;
-            margin-right: 8px;
-        }
-   }
-}
 
-
-/*
- .pricing-summary {
+.pricing-summary {
     border-radius: 2px;
-    margin-top:65px;
     box-shadow: 0px 0px 8px #f2f2f2;
-    margin-left: 25px;
     @include phone-only{
         border: 1px solid $gray-light;
-        padding: 0;
+        padding: 10px;
     }
     @include tablet-portrait{
+        border: 1px solid $gray-light;
         padding: 18px 25px;
     }
     h6{
@@ -85,12 +28,12 @@
         font-size: $font-size-20;
         
         @include phone-only{
-            margin: 25px 0px 10px 0px;
+            margin: 10px 0px 10px 0px;
             padding-bottom: 0px;
         }
         @include tablet-portrait{
             padding-bottom: 15px;
-            margin: 0;
+            margin: 25px 0px 10px 0px;
         }
     }
     div{
@@ -131,5 +74,4 @@
         display: $display-block;
         text-align: $t-align-center;
     }
-} */
-
+}

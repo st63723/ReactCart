@@ -5,12 +5,9 @@ export const ADD_TO_CART = "@app/common/ADD_TO_CART";
 export const SET_WISHLIST = "@app/common/SET_WISHLIST";
 export const DELETE_TO_CART = "@app/common/DELETE_TO_CART";
 export const CART_JEWELLERY = "@app/common/CART_JEWELLERY";
-export const CART_MEN = "@app/common/CART_MEN";
-export const CART_WOMEN = "@app/common/CART_WOMEN";
-export const CART_ELECTRONICS = "@app/common/CART_ELECTRONICS";
 export const CHECKOUT = "@app/common/CHECKOUT";
 
-const initialState = { checkout:[], data: [], loading: false, cart: [] , datas:[], wishlist:[], men:[], women:[], jewellery:[], electronics:[] }
+const initialState = { checkout:[], data: [], loading: false, cart: [] , datas:[], wishlist:[], jewellery:[]}
 
 /*const addItemToCart = (state, action) => {
   const x = [action.payload];
@@ -64,26 +61,13 @@ const products = (state = initialState, action) => {
             cart: action.payload
           };
 
-        case CART_ELECTRONICS:
-          return {
-            ...state,
-            electronics: action.payload
-          };
+        
           case CART_JEWELLERY:
         return {
           ...state,
           jewellery: action.payload
         };
-        case CART_MEN:
-        return {
-          ...state,
-          men: action.payload
-        };
-        case CART_WOMEN:
-        return {
-          ...state,
-          women: action.payload
-        };  
+         
     case ADD_TO_CART:
       return {
         ...state,
@@ -125,23 +109,10 @@ export const deleteToCart = (product) => ({
   payload: product
 });
 
-export const setCartElectronics = product => ({
-  type: CART_ELECTRONICS,
-  payload: product
-});
 export const setCartJewellery = product => ({
   type: CART_JEWELLERY,
   payload: product
 });
-export const setCartWomen = product => ({
-  type: CART_WOMEN,
-  payload: product
-});
-export const setCartMen = product => ({
-  type: CART_MEN,
-  payload: product
-});
-
 export const clearProducts = () => ({
   type: CLEAR_PRODUCTS
 });

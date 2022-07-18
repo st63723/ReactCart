@@ -37,6 +37,7 @@
             top: 9px;
             color: $dark-gunmental;
             font-size: 20px;
+            cursor: pointer;
         }
          .products__filters{
             display: $display-block;
@@ -77,10 +78,13 @@
                 padding-right: 10px;
             }
          }
-         .filters--sort__results img{
+         .filters--sort__results{
+            cursor: pointer;
+             img{
             height: 14px;
             margin-right: 5px;
-         }
+            }
+        }  
          .filters--sort__products{
             img{
                 height: 13px;

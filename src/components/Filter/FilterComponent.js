@@ -117,10 +117,7 @@ useEffect(() => {
                     <div className='filter-title'>
                         Filters
                     </div>
-                     <div className='colors-names-row'>
-                        <span className='colors-name'>Black</span>
-                       <a href={url}>Clear all</a> 
-                     </div>
+                     
                 </div> 
                 <div className='filter-title filters-desktop'>Filters</div>
 

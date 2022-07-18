@@ -1,8 +1,21 @@
 import React from 'react'
 import './HomeShopDevicesComponent.scss'
 import { Link } from "react-router-dom";
+import { setProducts } from "../../reducers/products";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function HomeShopDevicesComponent() {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const productsMain = useSelector(store => store.products.datas);
+    const shopeDevices = () => {
+            const result = productsMain.filter(x => 
+                x.category == "electronics"
+             );
+            dispatch(setProducts(result));
+            navigate('/Products/Electronics');
+    }
     return (
         <>
         <section className='inner-container'>
@@ -17,7 +30,7 @@ function HomeShopDevicesComponent() {
                             <h2>Conquer your next adventure</h2>
                             <p className='home--shop--devices__row_subtitle'>Lorem Ipsum Dolor Tempor</p>
                             <div className='home--shop--devices__row__button'>
-                                <button type='button' className='transparent--button transparent--button--mod'>
+                                <button type='button' onClick={shopeDevices} className='transparent--button transparent--button--mod'>
                                     SHOP DEVICES
                                 </button>
                             </div>

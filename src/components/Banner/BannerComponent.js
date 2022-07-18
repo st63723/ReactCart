@@ -11,7 +11,7 @@ function BannerComponent() {
     const navigate = useNavigate();
     const productsMain = useSelector(store => store.products.datas);
     const shopNow = () => {
-       // dispatch(setProducts(productsMain));
+        dispatch(setProducts(productsMain));
         navigate('/Products')
     }
     return (
@@ -22,9 +22,7 @@ function BannerComponent() {
                        <div> 
                             <h1>Shop the new <br />Signature Collection</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lobortis mattis aliquam faucibus purus.</p>
-                           
                             <button onClick={shopNow} className='blue--button'>SHOP NOW</button>
-                            
                         </div> 
                     </article>
                 <div className='banner__image'></div>
