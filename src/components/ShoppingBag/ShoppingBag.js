@@ -10,6 +10,7 @@ import {deleteToCart} from "../../reducers/products";
 import { Link } from "react-router-dom";
 import CollapsibleComponent from "../Collapsible/CollapsibleComponent";
 import PriceSummary from '../Checkout/PriceSummary';
+import {useParams} from "react-router-dom"
 
 function ShoppingBag() {
   const cartItems = useSelector(state => state.products.cart);
@@ -17,14 +18,19 @@ function ShoppingBag() {
   const dispatch = useDispatch();
   const [subTotalCount, setSubTotalCount] = useState([]);
   const [EstimatedTotalCount, setEstimatedTotalCount] = useState([0]);
+  const {productId} = useParams();
 
   useEffect(() => {
-    const count = 0;
+   // const count = 0;
    // var Subtotal = cartItems.reduce((total, item)=>total+(item.price*item.quantity),count);
     // setSubTotalCount(Subtotal);
 
    // const estimated = Subtotal + 4;
    // setEstimatedTotalCount(estimated);
+  /* if(cartItems.length > 0){
+    var thisItemInCart = cartItems.filter(prod => prod.id == productId)
+    setCount(thisItemInCart[0].quantity);
+    } */
 }, [])
 const increment = () =>{
     if(count<10){
@@ -44,8 +50,6 @@ let CounthandleChange = (e)=>{
 const removeItem = (product) =>{
     const productId = product.id;
     const x = cartItems.filter((item) => item.id !== productId);
-
-     // setDeleteToCartItem(productId)
       dispatch(deleteToCart(x));
 }
 
@@ -122,51 +126,6 @@ const removeItem = (product) =>{
                  {/* Product Shipping details end*/}       
 
                 </div>
-
-                {/* Cart items Pricing details start
-                <div className="pricing-summary-box aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--12">
-                    <div className="pricing-summary" role="Added Cart items Total Values">
-                        <aside>
-                        <h6>Pricing Summary</h6>
-                        <div className="price-row">
-                            <span className="left-val">Subtotal</span>
-                            <span className="left-val"><strong>$ {Math.round(cartItems.reduce((total, item)=>total+(item.price*item.quantity),count)*  100) / 100}</strong></span>
-                        </div>
-                        <div className="price-row">
-                            <span className="left-val">Coupon</span>
-                            <span className="left-val"> $ 1</span>
-                        </div>
-                        <div className="price-row">
-                            <span className="left-val">Gift Cart</span>
-                            <span className="left-val"> $ 2</span>
-                        </div>
-                        <div className="price-row">
-                            <span className="left-val">Estimated Tax</span>
-                            <span className="left-val">$ 1</span>
-                        </div>
-                        <div className="price-row">
-                            <span className="left-val">Estimated Shipping</span>
-                            <span className="left-val">Free</span>
-                        </div>
-                        <div className="price-row">
-                            <span className="left-val">Estimated Total</span>
-                            <span className="left-val"><strong>$ {Math.round((cartItems.reduce((total, item)=>total+(item.price*item.quantity),count)+2) * 100) / 100}</strong></span>
-                        </div>
-                        <div className="buttons" role="Checkout and Paypal buttons">
-                            <Link to={`/ShippingInformation`} className="checkout--link">
-                                <button type="button" className="checkout">
-                                    <img src={require('../../assets/images/lock.png')} alt="Checkout" />
-                                    Checkout
-                                </button>
-                            </Link>
-                            <button type="button" className="paypal">
-                            <img src={require('../../assets/images/PayPal.png')} alt="Paypal" />
-                            </button>
-                        </div>
-                       </aside> 
-                    </div>
-                </div>
-                {/* Cart items Pricing details end*/}  
                 <PriceSummary />
             </div>    
     </div> : <p className="no-cart" aria-label="No Products Description">No Products added in your Cart</p>

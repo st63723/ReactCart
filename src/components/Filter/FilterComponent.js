@@ -45,29 +45,7 @@ useEffect(() => {
             }
         }
         let totalVals=[];
-       /* checkedResults.forEach(val => {
-                    if(val == 'womenItems'){
-                      let result = productsMain.filter(x => 
-                          x.category == "women's clothing"
-                        );
-                        Array.prototype.push.apply(totalVals, result);
-              } else if(val == 'menItems'){
-                  let result = productsMain.filter(x => 
-                      x.category == "men's clothing"
-                  );
-                  Array.prototype.push.apply(totalVals, result);
-              } else if(val == 'jewelleryItems'){
-                  let result = productsMain.filter(x => 
-                      x.category == "jewelery"
-                  );
-                  Array.prototype.push.apply(totalVals, result);
-              } else if(val == 'electronicItems'){
-                  let result = productsMain.filter(x => 
-                      x.category == "electronics"
-                  );
-                  Array.prototype.push.apply(totalVals, result);
-              }
-        }); */
+      
         var a = checkedResults;
         for(let i=0; i < a.length; i++){
                     if(a[i] == 'womenItems'){
@@ -98,7 +76,7 @@ useEffect(() => {
                 dispatch(setProducts(totalVals));
               }
         }
-        
+        navigate('/FilterResults')
     }
   
 

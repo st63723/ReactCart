@@ -105,6 +105,10 @@ function PaymentInformation() {
                                 <label> Name on Card</label>
                                 <input placeholder=''
                                 name="NameOnCard" type="text" {...register("NameOnCard", {required: "Required",
+                                pattern: {
+                                  value: /^[a-zA-Z ]{2,30}$/,
+                                  message: 'Enter Valid Name'
+                              }
                                 })}
                                 />
                                 {errors.NameOnCard && <p className="errorMsg">{errors.NameOnCard.message}</p>}   
@@ -116,9 +120,13 @@ function PaymentInformation() {
                           <div className="aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12">  
                             <div className="form--group">
                                 <label> Credit Card Number</label>
-                                <input placeholder=''
+                                <input placeholder='xxxx-xxxx-xxxx-xxxx'
                                 name="CreditCardNumber" type="number" {...register("CreditCardNumber", {required: "Required",
-                                })}
+                                pattern: {
+                                  value: /^\(?([0-9]{4})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/,
+                                  message: 'Enter Valid Card Number(16 Digits)'
+                              }  
+                              })}
                                 />
                                 {errors.CreditCardNumber && <p className="errorMsg">{errors.CreditCardNumber.message}</p>}   
                             </div>
@@ -129,7 +137,8 @@ function PaymentInformation() {
                            <div className="form--group">
                                 <label> Expiration Date</label>
                                 <input placeholder=''
-                                name="ExpirationDate" type="number" {...register("ExpirationDate", {required: "Required",
+                                name="ExpirationDate" type="date" value="2018-07-22"
+                                min="2018-01-01" max="2028-12-31" {...register("ExpirationDate", {required: "Required",
                                 })}
                                 />
                                 {errors.ExpirationDate && <p className="errorMsg">{errors.ExpirationDate.message}</p>}   
@@ -140,6 +149,10 @@ function PaymentInformation() {
                                 <label> CVV</label>
                                 <input placeholder=''
                                 name="CVV" type="number" {...register("CVV", {required: "Required",
+                                pattern: {
+                                  value: /^\(?([0-9]{3})$/,
+                                  message: 'Enter Valid CVV(3 Digits)'
+                                  }  
                                 })}
                                 />
                                 {errors.CVV && <p className="errorMsg">{errors.CVV.message}</p>}   

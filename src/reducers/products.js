@@ -6,8 +6,9 @@ export const SET_WISHLIST = "@app/common/SET_WISHLIST";
 export const DELETE_TO_CART = "@app/common/DELETE_TO_CART";
 export const CART_JEWELLERY = "@app/common/CART_JEWELLERY";
 export const CHECKOUT = "@app/common/CHECKOUT";
+export const FILTER_RESULT_STATE = "@app/common/FILTER_RESULT_STATE"
 
-const initialState = { checkout:[], data: [], loading: false, cart: [] , datas:[], wishlist:[], jewellery:[]}
+const initialState = { checkout:[], filter:[], data: [], loading: false, cart: [] , datas:[], wishlist:[], jewellery:[]}
 
 /*const addItemToCart = (state, action) => {
   const x = [action.payload];
@@ -60,6 +61,11 @@ const products = (state = initialState, action) => {
             ...state,
             cart: action.payload
           };
+          case FILTER_RESULT_STATE:
+            return {
+              ...state,
+              filter: action.payload
+            };  
 
         
           case CART_JEWELLERY:
@@ -84,6 +90,11 @@ const products = (state = initialState, action) => {
 export default products;
 export const checkout = list => ({
   type: CHECKOUT,
+  payload: list
+});
+
+export const filterResultState = list => ({
+  type: FILTER_RESULT_STATE,
   payload: list
 });
 

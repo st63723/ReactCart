@@ -33,6 +33,7 @@ import SuccessfullPage from "./components/Checkout/SuccessfullPage";
           <Route path="/PaymentInformation" element={ <PaymentInformation /> } />
           <Route path="/ReviewOrder" element={ <ReviewOrder /> } />
           <Route path="/SuccessfullPage" element={ <SuccessfullPage /> } />
+          <Route path="/FilterResults" element={ <ProductsPageComponent /> } />
       </Routes>
     </App>
   </BrowserRouter>

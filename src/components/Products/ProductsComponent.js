@@ -183,7 +183,7 @@ const productsMain = useSelector(store => store.products.datas);
                            
                             <article  key={product.id}> 
                                 <div className='products--box__product'>
-                                <Link to={`/products/${product.id}`}>
+                                <Link to={`/Products/${product.id}`}>
                                     <img src={product.image} alt={product.title} /> 
                                     <span className='products--box__product__name'>{product.title}</span>
                                     <span className='products--box__product__price'>${product.price}</span>

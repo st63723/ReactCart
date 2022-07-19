@@ -63,10 +63,13 @@ function ShippingInformation() {
                           <div className="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12">
                             <div className="form--group ">
                                 <label> Phone Number</label>
-                                <input placeholder='(222)222-2222'
-                                name="PhoneNumber" type="number" {...register("PhoneNumber", {required: "Required"
-                                
-                                })}
+                                <input placeholder='XXX-XXX-XXXX'
+                                name="PhoneNumber" type="number" {...register("PhoneNumber", {required: "Required",
+                                pattern: {
+                                  value: /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/,
+                                  message: 'Enter Valid Phone Number'
+                              }
+                               })}
                                 />
                                 {errors.PhoneNumber && <p className="errorMsg">{errors.PhoneNumber.message}</p>}   
                             </div>
@@ -87,7 +90,7 @@ function ShippingInformation() {
                                 <option value="Newziland">Newziland</option>
                                 <option value="England">England</option>
                                 </select>
-                                {errors.Country && <p className="errorMsg">{errors.PhoneNumber.message}</p>}   
+                                {errors.Country && <p className="errorMsg">{errors.Country.message}</p>}   
                             </div>
                           </div>
                         </div>
@@ -98,7 +101,10 @@ function ShippingInformation() {
                                 <label> First Name</label>
                                 <input 
                                 name="FirstName" type="text" {...register("FirstName", {required: "Required",
-                               
+                                pattern: {
+                                  value: /^[a-zA-Z ]{2,30}$/,
+                                  message: 'Enter Valid Name'
+                              }
                                 })}
                                 />
                                 {errors.FirstName && <p className="errorMsg">{errors.FirstName.message}</p>}   
@@ -109,7 +115,10 @@ function ShippingInformation() {
                                 <label> Last Name</label>
                                 <input
                                 name="LastName" type="text" {...register("LastName", {required: "Required",
-                                
+                                pattern: {
+                                  value: /^[a-zA-Z ]{2,30}$/,
+                                  message: 'Enter Valid Name'
+                              }
                                 })}
                                 />
                                 {errors.LastName && <p className="errorMsg">{errors.LastName.message}</p>}   
@@ -148,7 +157,10 @@ function ShippingInformation() {
                                 <label> City</label>
                                 <input 
                                 name="City" type="text" {...register("City", {required: "Required",
-                                
+                                pattern: {
+                                  value: /^[a-zA-Z ]{2,30}$/,
+                                  message: 'Enter Valid City Name'
+                              }
                                 })}
                                 />
                                 {errors.City && <p className="errorMsg">{errors.City.message}</p>}   
@@ -175,7 +187,10 @@ function ShippingInformation() {
                                     <label> ZIP</label>
                                     <input 
                                     name="Zip" type="number" {...register("Zip", {required: "Required",
-                                    
+                                    pattern: {
+                                      value: /(^\d{5}$)|(^\d{5}-\d{4}$)/,
+                                      message: 'Enter Valid Zip Code'
+                                  }
                                     })}
                                     />
                                     {errors.Zip && <p className="errorMsg">{errors.Zip.message}</p>}   

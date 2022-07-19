@@ -23,51 +23,25 @@ function ProductDetail() {
     const dispatch = useDispatch();
     const {productId} = useParams();
     const navigate = useNavigate();
-   // const [products, setProducts] = useState([]);
     const [count, setCount] = useState(0);
-    
 
-    //fetching products
-   /* const fetchProducts = async () => {
-        const { data } = await Axios.get(
-        "https://fakestoreapi.com/products"
-        );
-        const products = data;
-        setProducts(products);
-    };
-    useEffect(() => {
-        fetchProducts();
-    }, []); */
 
     //fetch add cart item
-    const thisProduct = products.filter(prod => prod.id == productId)
+    const thisItem = productsMain.filter(prod => prod.id == productId);
+    const thisProduct = thisItem.map(obj =>({ ...obj, quantity: count}));
+    
     useEffect(() => {
-        if (cartItems.length >= 1) {
-            document.title = `Cart (${cartItems.length})`
+        
+        if(cartItems.findIndex(person => person.id === productId)){
+            var thisItemInCart = cartItems.filter(prod => prod.id == productId)
+            if(thisItemInCart.length >0){
+            setCount(thisItemInCart[0].quantity);
+            }
+        } else{
+            alert("Object not found.");
         }
-    }, [cartItems.length])
-    const addItemToCart = (product, count) => {
-        if(count > 0){
-            alert("Product added in 'My Cart' successfully..")
-            
-                const x = [product];
-                const y = x.map(obj =>({ ...obj, quantity: count}));
-                const itemInCart = cartItems.find(item => item.id === y.id);
-               
-                if(!itemInCart) {
-                    var cartItemsTotal = [...cartItems, y[0]];
-                }else {
-                  // TODOL: UPDATE ITEM COUNT
-                }
-               // return { cartItems };
-
-            dispatch(addToCart(cartItemsTotal));
-            navigate('/ShoppingBag');
-        } else {
-            alert("Please select Product Quantity");
-        }
-    }
-    const increment = () =>{
+    }, [])
+     const increment = () =>{
         if(count<10){
             setCount(count + 1)
         }
@@ -80,6 +54,30 @@ function ProductDetail() {
     let CounthandleChange = (e)=>{
         setCount(e.target.value);
        }
+    const addItemToCart = (product) => {
+        if(count > 0){
+            alert("Product added in 'My Cart' successfully..")
+            
+                
+                
+               
+                if(cartItems.length == 0) {
+                  //  var cartItemsTotal = [...cartItems, y[0]];
+                    const vals = [product];
+                    dispatch(addToCart(vals));
+                }else {
+                    const itemInCart = cartItems.filter(item => item.id !== product.id);
+                    const yxv = [...itemInCart, product];
+                    dispatch(addToCart(yxv));
+                }
+
+           
+            navigate('/ShoppingBag');
+        } else {
+            alert("Please select Product Quantity");
+        }
+    }
+   
        
     const HeartIconEvent = (e) =>{
         const x = e.target.id;
@@ -147,7 +145,7 @@ function ProductDetail() {
 
                         {/* Product Add to Cart and share buttons */}
                        <div className="addToCart" role="Product Add To Cart" >
-                           <button type="button" onClick={() => addItemToCart(product, count)}>ADD TO CART</button>
+                           <button type="button" onClick={() => addItemToCart(product)}>ADD TO CART</button>
                        </div>
                        <div className="save--share" role="product save and share">
                            <div className="save--share__save">
