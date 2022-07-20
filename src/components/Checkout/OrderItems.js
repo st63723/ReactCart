@@ -22,9 +22,9 @@ function OrderItems() {
                                     <img src={product.image} alt="Product Image" />
                                     <div className="bag-product-details" role="Added Cart item Details">
                                         <span className="bag-p-name">{product.title}</span>
-                                        <span className="bag-p-size">Size: XL</span>
-                                        <span className="bag-p-color">Color: Red</span>
-                                        <span className="bag-p-price">Price: ${product.quantity}</span>
+                                        <span className="bag-p-size">Size: -</span>
+                                        <span className="bag-p-color">Color: -</span>
+                                        <span className="bag-p-price">Price: ${product.price}</span>
                                     </div>
                                   </div>
                                   ))}
