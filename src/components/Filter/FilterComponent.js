@@ -33,7 +33,7 @@ useEffect(() => {
     const cartCheckbox = (e) => {
         var s = e.target.value;
         if (e.target.checked) {
-          checkedResults.concat(s);
+          //checkedResults.concat(s);
              checkedResults.push(s);          
         } else {
             var index = checkedResults.indexOf(s);
@@ -41,12 +41,14 @@ useEffect(() => {
               checkedResults.splice(index, 1);
             } 
             if(checkedResults.length == 0){
+              dispatch(setCartJewellery(''));
               dispatch(setProducts(productsMain));
             }
         }
         let totalVals=[];
       
-        var a = checkedResults;
+        let uniqueChars = [...new Set(checkedResults)];
+        var a = uniqueChars;
         for(let i=0; i < a.length; i++){
                     if(a[i] == 'womenItems'){
                       let result = productsMain.filter(x => 
