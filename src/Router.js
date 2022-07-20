@@ -20,6 +20,7 @@ import SuccessfullPage from "./components/Checkout/SuccessfullPage";
     <Routes>
     <Route path="/" element={ <HomePageComponent/> } />
           <Route path="/venia-shoppingcart" element={ <HomePageComponent/> } />
+          <Route path="/ReactCart" element={ <HomePageComponent/> } />
           <Route path="/Home" element={ <HomePageComponent/> } />
           <Route path="/Products" element={ <ProductsPageComponent/>} />
           <Route path="/Products/Women" element={ <ProductsPageComponent/>} />
