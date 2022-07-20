@@ -2,7 +2,7 @@
   "name": "myapp1",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/st63723/venia-shoppingcart",
+  "homepage": "https://github.com/st63723/ReactCart",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
     "@testing-library/jest-dom": "^5.16.4",
