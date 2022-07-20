@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/ReactCart/static/css/main.4a599d94.css",
+    "main.js": "/ReactCart/static/js/main.cc790ab3.js",
+    "static/media/banner.jpg": "/ReactCart/static/media/banner.9f618a35ccd42d21e0c5.jpg",
+    "static/media/men-image.jpg": "/ReactCart/static/media/men-image.ee844e7ef1d595400784.jpg",
+    "static/media/loader.gif": "/ReactCart/static/media/loader.d9e72f61e7e8047da5b2.gif",
+    "static/media/product1.jpg": "/ReactCart/static/media/product1.3f14b9bd3d076452d15f.jpg",
+    "static/media/product2.jpg": "/ReactCart/static/media/product2.6054ca9658ccc7f4232e.jpg",
+    "static/media/Muli-SemiBold.eot": "/ReactCart/static/media/Muli-SemiBold.c9f337fe75eb26a7954a.eot",
+    "static/media/Muli.eot": "/ReactCart/static/media/Muli.d10272e914c45c1622a3.eot",
+    "static/media/Muli-SemiBold.ttf": "/ReactCart/static/media/Muli-SemiBold.15a08bd3afc8d1eeb3c1.ttf",
+    "static/media/Muli.ttf": "/ReactCart/static/media/Muli.8cfaad42c03289a95135.ttf",
+    "static/media/adventure-banner.jpg": "/ReactCart/static/media/adventure-banner.473e09658ea697baa98a.jpg",
+    "static/media/home_banner.jpg": "/ReactCart/static/media/home_banner.f74ea5194e22b8866b5d.jpg",
+    "static/media/Muli-SemiBold.woff": "/ReactCart/static/media/Muli-SemiBold.4a60b332cb6e42b84f64.woff",
+    "static/media/product01.jpg": "/ReactCart/static/media/product01.a2abcaeaeb2990212deb.jpg",
+    "static/media/Muli.woff": "/ReactCart/static/media/Muli.523269002d7d8747d045.woff",
+    "static/media/product3.jpg": "/ReactCart/static/media/product3.a8fb2045dd1eeb1dc87a.jpg",
+    "static/media/Muli-SemiBold.woff2": "/ReactCart/static/media/Muli-SemiBold.c6e8d9f950ab28bd4f29.woff2",
+    "static/media/Muli.woff2": "/ReactCart/static/media/Muli.5260693a6e50acb7889b.woff2",
+    "static/media/filters.svg": "/ReactCart/static/media/filters.7c915dc57145798b90591bed69319a5f.svg",
+    "static/media/share.svg": "/ReactCart/static/media/share.937f3e30f2a6933d28faecdb05283670.svg",
+    "static/media/trash.svg": "/ReactCart/static/media/trash.f2c7c7f09330f590d31c1c0557d797c4.svg",
+    "static/media/instagram.svg": "/ReactCart/static/media/instagram.c42bd9b1620e9b9c4f4bdd8125e3df62.svg",
+    "index.html": "/ReactCart/index.html",
+    "static/media/layers.svg": "/ReactCart/static/media/layers.170a40b7cb19df1ce68c4950de0356d2.svg",
+    "static/media/arrow-up.svg": "/ReactCart/static/media/arrow-up.86c1b9d560c321b35dab51e4cbb941d8.svg",
+    "static/media/arrow-down.svg": "/ReactCart/static/media/arrow-down.90f4042d47b9007f7e450a3fb03c7af8.svg",
+    "static/media/twitter.svg": "/ReactCart/static/media/twitter.ea0868d8aedbb104e6c1332846a10c06.svg",
+    "static/media/heart.svg": "/ReactCart/static/media/heart.818e64ed520f0e7e9b9552df8e8f4366.svg",
+    "static/media/edit.svg": "/ReactCart/static/media/edit.445dc5915138b5166b630a641f8b0ea8.svg",
+    "static/media/facebook.svg": "/ReactCart/static/media/facebook.1d020e027c20a955b3bd6208f2653e5b.svg",
+    "main.4a599d94.css.map": "/ReactCart/static/css/main.4a599d94.css.map",
+    "main.cc790ab3.js.map": "/ReactCart/static/js/main.cc790ab3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4a599d94.css",
+    "static/js/main.cc790ab3.js"
+  ]
+}
