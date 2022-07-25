@@ -1,8 +1,7 @@
 {
   "files": {
-    "main.css": "/ReactCart/static/css/main.4a599d94.css",
-    "main.js": "/ReactCart/static/js/main.cc790ab3.js",
-    "static/media/banner.jpg": "/ReactCart/static/media/banner.9f618a35ccd42d21e0c5.jpg",
+    "main.css": "/ReactCart/static/css/main.40f19eaf.css",
+    "main.js": "/ReactCart/static/js/main.722d95f1.js",
     "static/media/men-image.jpg": "/ReactCart/static/media/men-image.ee844e7ef1d595400784.jpg",
     "static/media/loader.gif": "/ReactCart/static/media/loader.d9e72f61e7e8047da5b2.gif",
     "static/media/product1.jpg": "/ReactCart/static/media/product1.3f14b9bd3d076452d15f.jpg",
@@ -13,6 +12,7 @@
     "static/media/Muli.ttf": "/ReactCart/static/media/Muli.8cfaad42c03289a95135.ttf",
     "static/media/adventure-banner.jpg": "/ReactCart/static/media/adventure-banner.473e09658ea697baa98a.jpg",
     "static/media/home_banner.jpg": "/ReactCart/static/media/home_banner.f74ea5194e22b8866b5d.jpg",
+    "static/media/banner.jpg": "/ReactCart/static/media/banner.6a1bb670b39fe2ac4319.jpg",
     "static/media/Muli-SemiBold.woff": "/ReactCart/static/media/Muli-SemiBold.4a60b332cb6e42b84f64.woff",
     "static/media/product01.jpg": "/ReactCart/static/media/product01.a2abcaeaeb2990212deb.jpg",
     "static/media/Muli.woff": "/ReactCart/static/media/Muli.523269002d7d8747d045.woff",
@@ -31,11 +31,11 @@
     "static/media/heart.svg": "/ReactCart/static/media/heart.818e64ed520f0e7e9b9552df8e8f4366.svg",
     "static/media/edit.svg": "/ReactCart/static/media/edit.445dc5915138b5166b630a641f8b0ea8.svg",
     "static/media/facebook.svg": "/ReactCart/static/media/facebook.1d020e027c20a955b3bd6208f2653e5b.svg",
-    "main.4a599d94.css.map": "/ReactCart/static/css/main.4a599d94.css.map",
-    "main.cc790ab3.js.map": "/ReactCart/static/js/main.cc790ab3.js.map"
+    "main.40f19eaf.css.map": "/ReactCart/static/css/main.40f19eaf.css.map",
+    "main.722d95f1.js.map": "/ReactCart/static/js/main.722d95f1.js.map"
   },
   "entrypoints": [
-    "static/css/main.4a599d94.css",
-    "static/js/main.cc790ab3.js"
+    "static/css/main.40f19eaf.css",
+    "static/js/main.722d95f1.js"
   ]
 }
