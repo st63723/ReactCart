@@ -4,12 +4,7 @@ import BannerComponent from "../Banner/BannerComponent";
 import HomeProductsComponent from "../Home/HomeProductsComponent";
 import HomeShopCollectionComponent from "../Home/HomeShopCollectionComponent";
 import HomeShopDevicesComponent from "../Home/HomeShopDevicesComponent";
-
-
 function HomePageComponent() {
-  
-  
-      
   return (
     <div>
       <BannerComponent />
@@ -19,6 +14,4 @@ function HomePageComponent() {
     </div>
   );
 }
-
 export default HomePageComponent;
-

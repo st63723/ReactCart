@@ -1,11 +1,9 @@
 @import './../../common-scss/variables.scss';
-
 //mixins
 @mixin checkbox-prop {
     border-radius: 4px;
     display: inline-block;
 }
-
 .products {
     .crumbs{
         a{
@@ -104,8 +102,7 @@
         .filters-mobile{
             display:$display-none;
         }
-    }
-    
+    }   
     fieldset {
         border: 0px;
         

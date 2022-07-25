@@ -1,6 +1,4 @@
 @import './../../common-scss/variables.scss';
-
-
 header {
     background-color: $primary-color;
     .inner-wrapper{
@@ -151,7 +149,6 @@ header {
           .menu--mobile.open {
             left: 0px;
           }
-
           .right--nav{
             text-align: right;
             .right--nav__carticon{

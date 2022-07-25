@@ -1,5 +1,4 @@
 @import './common-scss/variables.scss';
-
 .container{
     @include phone-only{
         width: 100%;

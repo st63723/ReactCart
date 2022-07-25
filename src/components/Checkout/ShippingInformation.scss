@@ -1,5 +1,4 @@
 @import './../../common-scss/variables.scss';
-
 .shipping--information {
     .guest--checkout{
         color: $dark-gunmental;
@@ -80,7 +79,6 @@
             height: 12px;
             border-bottom: 10px solid $primary-color;
             position: absolute;
-            
             @include phone-only{
                 right: 87px;
                 top: 51px;
@@ -121,7 +119,3 @@
         }
     }
 }
-
-
-
- 

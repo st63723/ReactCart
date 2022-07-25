@@ -1,5 +1,4 @@
 @import './../../common-scss/variables.scss';
-
 //mixins
 @mixin color-fontfamily{
     color: $dark-color;
@@ -20,7 +19,6 @@
     cursor: pointer;
     display: inline-block;
 }
-
 .product-details{
     @include phone-only{
         padding-top:0px;
@@ -54,8 +52,7 @@
                 margin: 0px 0px;
                 text-align: left;
             }
-        }
-        
+        }       
         img {
             padding-left: 10px;
             @include phone-only{
@@ -206,9 +203,7 @@
             @include min769x{
                 margin: 0 0;
             } 
-            
-            
-                .save--share__save{
+           .save--share__save{
                     display: $display-inline;
                     vertical-align: top;
                     margin-right: 17px;
@@ -257,7 +252,6 @@
         text-align: inherit;
         margin-top: 40px;
     }
-
     .details-row{
         @include phone-only{
            padding-top: 20px;
@@ -293,8 +287,7 @@
         font-size: $font-size-20;
         padding-bottom: 15px;
     }
-    .details-row{
-       
+    .details-row{  
         .sweat-wicking{
             width: 200px;
             margin-bottom: 15px;
@@ -326,6 +319,3 @@
             display: $display-block;
         }
    }
-
-
-

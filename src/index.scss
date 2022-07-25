@@ -1,5 +1,4 @@
 @import "./common-scss/variables.scss";
-
 @mixin button{
     font-family: $muli-semibold;
     color: $white-color;
@@ -17,8 +16,6 @@ body {
 * {
   box-sizing: border-box;
 }
-
-// common css
 .dark-gunmental{
   color: $dark-gunmental;
 }
@@ -49,4 +46,7 @@ input[type="text"]:focus-visible, input[type="number"]:focus-visible {
       padding: 8px 55px;
     }
 }
-
+.my404{
+  text-align: center;
+  margin: 5% 0
+  }

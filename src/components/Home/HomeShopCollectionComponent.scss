@@ -1,6 +1,4 @@
 @import './../../common-scss/variables.scss';
-
-
 .home--shop--collection{
     margin: 40px 0px;
     article{
@@ -61,7 +59,6 @@
                 @include min769x{
                     display: inline;
                     margin: 0 0;
-                    
                 }
                 @include desktop-md{
                     width: auto;
@@ -72,7 +69,6 @@
             width: 90px;
             height: 8px;
             background-color: $primary-color;
-            
             @include phone-only{
                 margin: 33px auto;
             }

@@ -1,6 +1,4 @@
 @import './../../common-scss/variables.scss';
-
-
 @mixin buttonc {
             width: 247px;
             height: 40px;
@@ -10,6 +8,16 @@
             border-radius: 28px;
             border:0;
             color: $white-color;
+}
+@mixin HeartIconProperties{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 20px;
+    height: 20px;
+    margin-right: 3px;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
 }
 @mixin updownarrow {
     display: $display-inline;
@@ -110,12 +118,12 @@
                 color: $dark-gunmental;
                 font-size: $font-size-12;
                 margin-bottom: 10px;
-                cursor: pointer;
                 img {
                     width: 16px !important;
                     height: 16px !important;
                     margin-right: 8px;
                     float: $float-left;
+                    cursor: pointer;
                 }
             }
         }
@@ -141,8 +149,7 @@
             background: $b-transparent;
             cursor: pointer;
         }
-        input{
-           
+        input{         
             height: 40px;
             border:1px solid $gray-light;
             border-radius: 10px;
@@ -156,7 +163,6 @@
             }
         }
     }
-
     .product--estimation{
         display: $display-block;
         border: 1px solid $gray-light;
@@ -194,6 +200,14 @@
             }
         }
     }
+}
+.save--share__save__heart--icon{
+    background-image: url(../../assets/images/heart-icon-white.png);
+    @include HeartIconProperties;
+}
+.save--share__save__heart--icon--red{
+    background-image: url(../../assets/images/heart-icon-red.png);
+    @include HeartIconProperties;
 }
 .no-cart{
     @include middle-center;

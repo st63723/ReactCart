@@ -16,20 +16,19 @@ function BannerComponent() {
     }
     return (
         <>
-        <section>
-            <div className="banner">
+            <section>
+                <div className="banner">
                     <article className='banner__text'>
-                       <div> 
+                        <div>
                             <h1>Shop the new <br />Signature Collection</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lobortis mattis aliquam faucibus purus.</p>
                             <button onClick={shopNow} className='blue--button'>SHOP NOW</button>
-                        </div> 
+                        </div>
                     </article>
-                <div className='banner__image'></div>
-            </div>  
-        </section>       
+                    <div className='banner__image'></div>
+                </div>
+            </section>
         </>
     )
 }
-
 export default BannerComponent
