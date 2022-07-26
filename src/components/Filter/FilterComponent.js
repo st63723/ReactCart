@@ -6,23 +6,32 @@ import { useNavigate } from "react-router-dom";
 import { setCartElectronics, setCartJewellery, setCartWomen, setProducts } from "../../reducers/products";
 import { setCartMen } from "../../reducers/products";
 import { toppings } from "./toppings";
+import { useLocation } from "react-router-dom"
 function FilterComponent() {
   const productsMain = useSelector(store => store.products.datas);
   const checkedValues = useSelector(store => store.products.jewellery);
   const products = useSelector(store => store.products.data);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const jewelleryItems = useSelector(store => store.products.jewellery);
   const menItems = useSelector(store => store.products.men);
   const womenItems = useSelector(store => store.products.women);
   const electronicItems = useSelector(store => store.products.electronics);
+  const location = useLocation();
+  const [showWomens, setShowWomens] = useState(checkedValues);
+  const [clearVal, setClearVal] = useState(false);
   let url = "";
   const checkedResults = [];
   const [checkedState, setCheckedState] = useState(
     new Array(toppings.length).fill(false)
   );
+
   useEffect(() => {
     dispatch(setCartJewellery(false));
+    /* if (location.pathname = '/Products/Women') {
+      setShowWomens(true);
+    } else {
+      setShowWomens(false);
+    } */
   }, []);
   const [total, setTotal] = useState(0);
   const handleOnChange = (position) => {
@@ -72,48 +81,34 @@ function FilterComponent() {
     if (checkedResults.length == 0) {
       dispatch(setProducts(productsMain));
     }
-    navigate('/FilterResults')
+
     setCheckedState(updatedCheckedState);
+  }
+  const clearAll = () => {
+    setClearVal(false);
+
   }
   return (
     <>
-      {/* Page Navigation section */}
-      <nav className="crumbs">
-        <Link to="/" aria-label='Clothing url'>Clothing</Link> /
-        <Link to="/" aria-label='Womens url'>Women's</Link> /
-        <Link to="/" aria-label='Outerwear url'>Outerwear</Link>
-      </nav>
-      {/* filters section start */}
-      <div className="filters">
-        <div className="filters-mobile">
-          <div className='filter-title'>
-            Filters
+
+      {toppings.map(({ name }, index) => {
+        return (
+          <div role="group" key={index}>
+            <label htmlFor={`custom-checkbox-${index}`}>
+              <input
+                type="checkbox"
+                className='checkbox-field'
+                id={`custom-checkbox-${index}`}
+                name={name}
+                value={name}
+                checked={checkedState[index]}
+                onChange={() => handleOnChange(index)}
+              />
+              {name}</label>
           </div>
-        </div>
-        <div className='filter-title filters-desktop'>Filters</div>
-        {/* Brands section start */}
-        <fieldset>
-          <div className="filter-sub-title">Category</div>
-          {toppings.map(({ name, price }, index) => {
-            return (
-              <div role="group" key={index}>
-                <label htmlFor={`custom-checkbox-${index}`}>
-                  <input
-                    type="checkbox"
-                    className='checkbox-field'
-                    id={`custom-checkbox-${index}`}
-                    name={name}
-                    value={name}
-                    checked={checkedState[index]}
-                    onChange={() => handleOnChange(index)}
-                  />
-                  {name}</label>
-              </div>
-            );
-          })}
-        </fieldset>
-      </div >
-      {/* filters section end */}
+        );
+      })}
+      {/*<input type="button" value="Clear All" onClick={clearAll} className='clear--all' /> */}
     </>
   )
 }

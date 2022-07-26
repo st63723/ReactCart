@@ -143,4 +143,18 @@
             padding-top: 8px;
         }
     }
+    .show--women{
+        display: block;
+    }
+    .hide--women{
+        display: none;
+    }
+    .clear--all {
+        margin-top: 20px;
+        background: #555;
+        border: 0;
+        color: #fff;
+        border-radius: 6px;
+        padding: 8px 12px;
+    }
 }

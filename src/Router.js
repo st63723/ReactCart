@@ -13,6 +13,7 @@ import ShippingMethod from "./components/Checkout/ShippingMethod";
 import PaymentInformation from "./components/Checkout/PaymentInformation";
 import ReviewOrder from "./components/Checkout/ReviewOrder";
 import SuccessfullPage from "./components/Checkout/SuccessfullPage";
+import AllFiltersComponent from "./components/Products/AllFiltersComponent";
 import My404Component from "./My404Component";
 
 const Router = () => (
@@ -34,7 +35,7 @@ const Router = () => (
         <Route path="/PaymentInformation" element={<PaymentInformation />} />
         <Route path="/ReviewOrder" element={<ReviewOrder />} />
         <Route path="/SuccessfullPage" element={<SuccessfullPage />} />
-        <Route path="/FilterResults" element={<ProductsPageComponent />} />
+        <Route path="/Products/AllProducts" element={<AllFiltersComponent />} />
         <Route path='/*' exact={true} element={<My404Component />} />
       </Routes>
     </App>

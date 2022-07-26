@@ -12,7 +12,7 @@ function BannerComponent() {
     const productsMain = useSelector(store => store.products.datas);
     const shopNow = () => {
         dispatch(setProducts(productsMain));
-        navigate('/Products')
+        navigate('/Products/AllProducts')
     }
     return (
         <>

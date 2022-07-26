@@ -14,7 +14,8 @@ import Pagination from "react-js-pagination";
 import { setProducts, setWishlist } from "../../reducers/products";
 import { setMainProducts } from "../../reducers/products";
 import { useDispatch, useSelector } from "react-redux";
-function ProductsComponent() {
+import ProductsBannerComponent from './ProductsBannerComponent';
+function AllFiltersComponent() {
     const productsMain = useSelector(store => store.products.datas);
     const [dropdownValue, setDropdownValue] = useState([]);
     const [sortAllProducts, setSortAllProducts] = useState(false);
@@ -72,7 +73,7 @@ function ProductsComponent() {
     let url = "";
     return (
         products.length ?
-            <div className='inner-container'>
+            <><ProductsBannerComponent /><div className='inner-container'>
                 <div className='products aem-Grid aem-Grid--12' aria-label="Cloth Products">
                     {/* Left Filters section start */}
                     <div className={`${hideLightbox ? "products__show--lightbox" : "products__hide--lightbox"}`}>
@@ -99,23 +100,8 @@ function ProductsComponent() {
                             </div>
                             <div className='filter-title filters-desktop'>Filters</div>
                             <div className="filter-sub-title">Category</div>
-                            <aside className={`${(products[0].allProducts == "yes") ? "all__products__show" : "all__products__hide"}`}>
+                            <aside>
                                 <FilterComponent />
-                            </aside>
-                            <aside className={`${(products[0].category == "men's clothing") ? "mens__products__show" : "mens__products__hide"}`}>
-                                <div role="group"><label><input type="checkbox" checked="checked" readOnly />Men's Clothing</label></div>
-                            </aside>
-                            <aside className={`${(products[0].category == "jewelery") ? "jewelery__products__show" : "jewelery__products__hide"}`}>
-
-                                <div role="group"><label><input type="checkbox" checked="checked" readOnly />Jewellery</label></div>
-                            </aside>
-                            <aside className={`${(products[0].category == "electronics") ? "electronics__products__show" : "electronics__products__hide"}`}>
-
-                                <div role="group"><label><input type="checkbox" checked="checked" readOnly />Electronics</label></div>
-                            </aside>
-                            <aside className={`${(products[0].category == "women's clothing") ? "womens__products__show" : "womens__products__hide"}`}>
-
-                                <div role="group"><label><input type="checkbox" checked="checked" readOnly />Women's Clothing</label></div>
                             </aside>
                         </div>
                     </div>
@@ -176,13 +162,12 @@ function ProductsComponent() {
                                 onChange={handlePageChange}
                                 hideFirstLastPages={true}
                                 itemClass="page-item"
-                                linkClass="page-link"
-                            />
+                                linkClass="page-link" />
                         </div>   {/* Pagination end*/}
                     </div>
                 </div>
-            </div>
+            </div></>
             : <div className='container'><LoaderComponent /></div>
     )
 }
-export default ProductsComponent
+export default AllFiltersComponent

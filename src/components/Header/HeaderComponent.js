@@ -46,7 +46,15 @@ function HeaderComponent() {
         navigate('ReactCart');
         setHideLightbox(false);
     }
+    const getAllProductsValue = () => {
+        /* let y = { 'allProducts': 'yes' }
+         const AllProductsArray = [y, ...productsMain]*/
+        dispatch(setProducts(productsMain));
+        navigate('/Products/AllProducts');
+        setHideLightbox(false);
+    }
     const getWomensValue = () => {
+        dispatch(setCartJewellery(true));
         const result = productsMain.filter(x =>
             x.category == "women's clothing"
         );
@@ -55,7 +63,7 @@ function HeaderComponent() {
         setHideLightbox(false);
     }
     const getMensValue = () => {
-        dispatch(setCartJewellery(''));
+        dispatch(setCartJewellery(false));
         const result = productsMain.filter(x =>
             x.category == "men's clothing"
         );
@@ -99,7 +107,7 @@ function HeaderComponent() {
                                             <ul>
                                                 <li onClick={getHomeValue}>
                                                     Home</li>
-                                                <li onClick={getWomensValue}>
+                                                <li onClick={getAllProductsValue}>
                                                     Womens</li>
                                                 <li onClick={getMensValue}>
                                                     Mens</li>
@@ -147,6 +155,8 @@ function HeaderComponent() {
                                         <ul>
                                             <li onClick={getHomeValue} className={one == "ReactCart" ? "active" : ""}>
                                                 Home</li>
+                                            <li onClick={getAllProductsValue} className={two == "AllProducts" ? "active" : ""}>
+                                                All Products</li>
                                             <li onClick={getWomensValue} className={two == "Women" ? "active" : ""}>
                                                 Womens</li>
                                             <li onClick={getMensValue} className={two == "Men" ? "active" : ""}>
