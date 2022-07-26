@@ -1,6 +1,6 @@
 <strong>VENIA ReactJs App</strong>
 
-This Application hosted URL: https://venia-reactjs.herokuapp.com/
+This Application hosted URL: https://st63723.github.io/ReactCart/
 
 <strong>Technology:</strong>
 This website built with ReactJs library, HTML5, CSS3(SCSS), and ES6.
@@ -9,9 +9,11 @@ Accessability also implemented.
 
 <strong>Lighthouse Report</strong><br />
 <strong>Mobile Report:</strong>
-![mobile](https://user-images.githubusercontent.com/105704736/175541552-1b02c97a-8ba9-4876-af05-ad76580316f9.png)
+![image](https://user-images.githubusercontent.com/105704736/180737809-0078a8ed-c494-47fb-87de-8a25ccb5ecbb.png)
+
 
 
 <strong>Desktop Report:</strong>
-![desktop](https://user-images.githubusercontent.com/105704736/175541596-deb9cfa4-5b43-4890-a753-d4ea0fcfece9.png)
+![image](https://user-images.githubusercontent.com/105704736/180737954-cc834f37-b1ff-494b-b2b7-127e280beafe.png)
+
 
