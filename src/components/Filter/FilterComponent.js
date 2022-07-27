@@ -85,8 +85,9 @@ function FilterComponent() {
     setCheckedState(updatedCheckedState);
   }
   const clearAll = () => {
-    setClearVal(false);
-
+    // setClearVal(false);
+    setCheckedState(new Array(toppings.length).fill(false));
+    dispatch(setProducts(productsMain));
   }
   return (
     <>
@@ -94,7 +95,7 @@ function FilterComponent() {
       {toppings.map(({ name }, index) => {
         return (
           <div role="group" key={index}>
-            <label htmlFor={`custom-checkbox-${index}`}>
+            <label>
               <input
                 type="checkbox"
                 className='checkbox-field'
@@ -108,7 +109,7 @@ function FilterComponent() {
           </div>
         );
       })}
-      {/*<input type="button" value="Clear All" onClick={clearAll} className='clear--all' /> */}
+      <input type="button" value="Clear All" onClick={clearAll} className='clear--all' />
     </>
   )
 }

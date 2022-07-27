@@ -123,10 +123,10 @@ function ProductsComponent() {
                     <div className="aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12 min768pxx">
                         {/* Filter resultsand sort products for mobile view */}
                         <div className='filters--sort mobile--view'>
-                            <span className='filters--sort__results' onClick={() => setHideLightbox(true)}>
+                            {/*  <span className='filters--sort__results' onClick={() => setHideLightbox(true)}>
                                 <img src={FiltersIcon} alt="Filters icon" />
                                 Filter Results
-                            </span>
+                            </span>*/}
                             <span className='filters--sort__products'>
                                 <img src={ArrowDownIcon} onClick={() => sortProducts('low')} alt="Sort Products icon" />
                                 <img src={ArrowUpIcon} onClick={() => sortProducts('high')} alt="Sort Products icon" />

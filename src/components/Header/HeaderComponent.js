@@ -108,6 +108,8 @@ function HeaderComponent() {
                                                 <li onClick={getHomeValue}>
                                                     Home</li>
                                                 <li onClick={getAllProductsValue}>
+                                                    All Products</li>
+                                                <li onClick={getWomensValue}>
                                                     Womens</li>
                                                 <li onClick={getMensValue}>
                                                     Mens</li>

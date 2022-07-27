@@ -79,9 +79,18 @@ function AllFiltersComponent() {
                     <div className={`${hideLightbox ? "products__show--lightbox" : "products__hide--lightbox"}`}>
                         <span className='products__cross--mobile' onClick={() => setHideLightbox(false)}> X </span>
                         <div className="products__filters aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--12 min768px">
-                            <aside>
-                                <FilterComponent />
-                            </aside>
+                            <div className="filters">
+                                <div className="filters-mobile">
+                                    <div className='filter-title'>
+                                        Filters
+                                    </div>
+                                </div>
+                                <div className='filter-title filters-desktop'>Filters</div>
+                                <div className="filter-sub-title">Category</div>
+                                <aside>
+                                    <FilterComponent />
+                                </aside>
+                            </div>
                         </div>
                     </div>
 
