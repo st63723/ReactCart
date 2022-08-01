@@ -10,7 +10,7 @@
         height: 250px;
     }
       @include min1200{
-        height: 300px;
+        height: 350px;
       }
         .products--banner__image{
                 display: $display-block;
@@ -24,7 +24,7 @@
                     height: 190px;
                     background-image: url(../../assets/images/banner.jpg);
                     display: $display-block;
-                    background-position: 90% 33%;
+                    background-position: 85% 26%;
                 }
                 @include tablet-portrait{
                     height: 200px;
@@ -35,7 +35,7 @@
                     height: 250px;
                 }
                 @include min1200{
-                    height: 300px;
+                    height: 350px;
                 }
              img {
                 width: 100%;
@@ -58,27 +58,39 @@
                 height: 250px;
             }
             @include min1200{
-                height: 300px;
+                height: 350px;
             }
             h4 {
                 color: $white-color;
                 margin: -28px 0 0px 0;
                 padding: 0;
-                font-size: $font-size-36;
-                line-height: 44px;
                 text-align: $t-align-center;
                 font-family: $muli-semibold;
                 position: $position-relative;
+                @include phone-only{
+                    font-size: $font-size-36;
+                    line-height: 42px;
+                }
+                @include tablet-landscape{
+                    font-size: $font-size-48;
+                    line-height: 60px;
+                }
                 &::after{
                     content: '';
                     position: $position-absolute;
-                    width: 113px;
+                    width: 102px;
                     height: 8px;
                     background: $primary-color;
-                    bottom: -19px;
+                  
                     left: 0;
                     right: 0;
                     margin: 0 auto;
+                    @include phone-only{
+                        bottom: -30px;
+                    }
+                    @include tablet-landscape{
+                        bottom: -37px;
+                    }
                 }
             }
         }

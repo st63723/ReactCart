@@ -1,6 +1,6 @@
 @import './../../common-scss/variables.scss';
 .home--shop--collection{
-    margin: 40px 0px;
+    margin: 30px 0px;
     article{
         margin: 0 auto;
         display: $display-flex;
@@ -10,6 +10,7 @@
             .home--shop--collection__row__subtitle{
                 font-size: $font-size-20;
                 font-family: $muli-semibold;
+                margin: 10px 0px 20px 0px;
             }
         }
         @include phone-only{
@@ -25,13 +26,16 @@
         }
         @include min1200{
             height: 450px;
-            width: 94%;
+            width: 98%;
+        } 
+        @include desktop-md{
+            width: 91%;
         } 
         h2{
             margin: 0;
             @include phone-only{
                 font-size: $font-size-36;
-                line-height: 40px;
+                line-height: 45px;
             }
             @include min1200{
                 font-size: $font-size-48;
@@ -44,24 +48,24 @@
                 
                 &:first-child{
                     @include phone-only{
-                        margin-bottom: 15px;
+                        margin-bottom: 27px;
+                        display: $display-block;
                     }
                     @include desktop-md{
                         margin-right: 12px;
-                        margin-bottom: 0;
+                        display: inline-block;
                     }
                 }
                 @include phone-only{
                     display: block;
                     margin: 0 auto;
-                    width: 280px;
+                    width: 220px;
+                    height: 40px;
                 }
                 @include min769x{
                     display: inline;
                     margin: 0 0;
-                }
-                @include desktop-md{
-                    width: auto;
+                    padding: 0;
                 }
             }
         }

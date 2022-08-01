@@ -1,18 +1,41 @@
 @import './../../common-scss/variables.scss';
 //mixin
 @mixin dark-display{
-    color: $dark-gunmental;
+    color: $dark-color;
     display: $display-block;
 }
 @mixin HeartIconProperties{
                 background-repeat: no-repeat;
                 background-size: 100%;
-                width: 30px;
-                height: 26px;
+                width: 24px;
+                height: 20px;
                 margin-top: 10px;
 }
 .products {
-    padding-top: 25px;
+     @include phone-only{
+        padding-top: 18px;
+    }
+    @include desktop-md{
+        padding-top: 35px;
+    }
+    .crumbs--filters{
+        @include phone-only{
+            display: block;
+        }
+        @include tablet-portrait{
+            display: none;
+        }
+        padding-bottom: 25px;
+        a{
+            text-decoration: none;
+            color: $dark-color;
+            padding-right: 5px;
+            &:last-child{
+                padding-left: 5px;
+                color: $dark-light;
+            }
+        }
+    }
     .products__hide--lightbox{
         display: $display-none;
     }
@@ -22,13 +45,13 @@
         top: 0;
         right: 0;
         background: $white-color;
-        &:before {
+      /*  &:before {
             content: '';
             position: $position-absolute;
             box-shadow: 0px 8px 16px #aaa;
             width: 18px;
             height: 100%;
-        }
+        } */
         .products__cross--mobile {
             position: $position-absolute;
             right: 18px;
@@ -49,28 +72,35 @@
             display: $display-none;
             padding-right: 0px;
         }
-        @include tablet-portrait{
+        @include min769x{
             display: $display-block;
             padding-right: 10px;
         }
         @include min769x{
             padding-right: 30px;
         }
+        .crumbs{
+            @include min769x{
+                margin-top: 9px;
+            }
+        }
     }
     select{
         padding: 10px;
         border-radius: 8px;
         border: 1px solid #B5B7BC;
-        width: 200px;
-        color: $dark-gunmental;
+        width: 250px;
+        color: $dark-color;
         float: right;
+        height: 44px;
+        outline: 0;
     }
     .filters--sort{
          span{
             color: #181C24;
             text-decoration: underline;
             @include phone-only{
-                margin-right: 15px;
+                margin-right: 14px;
             }
             @include min769{
                 padding-right: 10px;
@@ -100,8 +130,16 @@
             display: $display-block;
             text-align: $t-align-center;
         }
-        @include min769{
+        @include min769x{
             display: $display-none;
+        }
+    }
+    .desktop--view{
+        @include phone-only{
+            display: $display-none;
+        }
+        @include min769x{
+            display: $display-block;
         }
     }
     .products--box{
@@ -110,6 +148,9 @@
         flex-wrap: wrap;
         row-gap: 20px;
         @include phone-only{
+            justify-content: space-between;
+        }
+        @include min769x{
             justify-content: space-around;
         }
         @include desktop-md{
@@ -119,26 +160,43 @@
             text-decoration: $display-none;
         }
         .products--box__product{
-           
             @include phone-only{
-                width: 130px;
+                width: 135px;
                 height: 310px;
             }
-            @include tablet-portrait{
-                width: 200px;
+            @include min375{
+                width: 160px;
+            }
+            @include min769x{
+                width: 220px;
                 height: auto;
             }
             @include tablet-landscape{
                 width: 200px;
-                height: auto;
             }
+            @include min1200{
+                width: 195px;
+            }
+            @include desktop-md{
+                width: 220px;
+            }
+            
+            
             .products--box__product__name{
                 @include dark-display;
                 font-family: $muli-semibold;
                 display: $display-block;
+                line-height: 20px;
+                @include phone-only{
+                    font-size: $font-size-16;
+                }
+                @include tablet-landscape{
+                    font-size: $font-size-18;
+                }
             }
             .products--box__product__price{
                 @include dark-display;
+                font-family: $muli-semibold;
             }
             .products--box__product__heart--icon{
                 background-image: url(../../assets/images/heart-icon-white.png);
@@ -150,13 +208,31 @@
             }
             img{
                 @include phone-only{
-                    width: 130px;
-                    height: 150px;
+                    width: 135px;
+                    height: 170px;
+                    box-shadow: 0px 1px 2px 1px #ccc;
+                    padding: 12px;
                 }
-                @include tablet-portrait{
-                    width:200px;
+                @include min375{
+                    width: 160px;
+                    height: 180px;
+                }
+                @include min769x{
+                    width:220px;
                     height: 310px;
-                }              
+                }  
+                @include tablet-landscape{
+                    width:200px;
+                }
+                @include min1200{
+                    width: 195px;
+                    height: 250px;
+                }
+                @include desktop-md{
+                    width:220px;
+                    height: 310px;
+                }
+                          
             }
         }
     }
@@ -177,52 +253,79 @@
     
     .filters {
         @include phone-only{
-            padding: 0px 0px 0px 19px;
+            padding: 0px;
+            height: 100vh;
         }
-        @include tablet-portrait{
+        @include min769x{
             box-shadow: 0px 0px 0px #00000026;
             padding: 0px;
             margin-top: 30px;
         }
-        .filters-mobile{
+        /* .filters-mobile{
             padding-bottom: 6px;
-            .filter-title {
+           .filter-title {
                 background: #E5E5E7;
                 padding: 13px 15px 13px 20px;
-                /* background-color: rgba(229, 229, 231, 0.25); */
+               
                 color: #1D1D1B;
                 font-family: $muli-semibold;
                 height: 55px;
             }
-        }   
+        }    */
         @include phone-only{   
             .filters-desktop{
                 display: none;
-                color: #1D1D1B;
-                font-family: $muli-semibold;
+                color: #181C24;
+                font-size: $font-size-20;
             }
             .filters-mobile{
                 display:$display-block;
             }
         }
-        @include tablet-portrait{
+        @include min769x{
             .filters-desktop{
                 display: $display-block;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
             }
             .filters-mobile{
                 display:$display-none;
             }
         }   
-       
+
             .filter-sub-title {
                 font-size: $font-size-16;
                 margin: 0;
-                color: $dark-gunmental;
+                color: $grayd2;
                 font-family: $muli-semibold;
-                padding-bottom: 8px;
+                border-top: 2px solid #ccc;
+                margin-top: 30px;
+                @include phone-only{
+                    margin: 10px 0px 8px 21px;
+                    padding-top: 10px;
+                }
+                @include min769x{
+                    padding: 10px 0px 8px 0px;
+                    margin: 10px 0px 0px 0px;
+                }
+            }
+            aside{
+                div{
+                    @include phone-only{
+                        padding: 6px 0 6px 0px;
+                    }
+                    @include min769x{
+                        padding: 6px 0;
+                    }
+                }
             }
             div {
-                padding: 6px 0px;
+                @include phone-only{
+                    padding: 0px 0px;
+                }
+                @include min769x{
+                    padding: 6px 0px;
+                }
                 input[type='checkbox']{
                     float: $float-left;
                     width: 22px;
@@ -238,7 +341,7 @@
                 }
             }
             a{
-                color: #181C24;
+                color: $grayd2;
                 font-size: $font-size-14;
                 display: $display-block;
                 padding-top: 8px;
@@ -251,15 +354,18 @@
             display: none;
         }
     }
+    .products--count{
+        @include phone-only{
+            width: 100%;
+            text-align: center;
+            display: block;
+            padding-top: 25px;
+        }
+        @include min769x{
+            padding-top: 9px;
+        }
+    }
 
-}
-@media screen and (min-device-width: 768px) and (max-device-width: 768px) {
-    .min768px{
-        width: 25% !important;
-    }
-    .min768pxx{
-        width: 75% !important;
-    }
 }
 .show, .mens__products__show, .all__products__show, .jewelery__products__show, .electronics__products__show, .womens__products__show{display: block;}
 .hide, .mens__products__hide, .jewelery__products__hide, .all__products__hide, .electronics__products__hide, .womens__products__hide{display: none;}

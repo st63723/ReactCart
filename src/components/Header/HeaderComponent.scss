@@ -2,7 +2,6 @@
 header {
     background-color: $primary-color;
     .inner-wrapper{
-        height: 80px;
         display: $display-flex;
         vertical-align: middle;
         align-items: $t-align-center;
@@ -29,10 +28,18 @@ header {
                         list-style: none;
                         display: inline-block;
                         cursor: pointer;
-                    padding: 0 15px;
                     color: $white-color;
                     font-family: $muli-semibold;
                     position: relative;
+                    @include phone-only {
+                        padding: 0 15px;
+                    }
+                    @include tablet-portrait{
+                        padding: 0 11px;
+                    }
+                    @include tablet-landscape{
+                        padding: 0 15px;
+                    }
                         &.active:after{
                             content: "";
                             position: absolute;
@@ -80,7 +87,6 @@ header {
             }
         }  
         .logo {
-            font-size: 32px;
             display: $display-flex;
             align-items: $t-align-center;
             
@@ -92,7 +98,7 @@ header {
                 height: 80px;
             }
             @include min769{
-                text-align: left;
+                justify-content: left;
             }
         }
         @include phone-only{
@@ -156,13 +162,14 @@ header {
                 border: 0;
                 cursor: pointer;
                 position: relative;
+                padding:0;
                 img{
                     width: 35px;
                 }
                 span{
                     position: $position-absolute;
-                    top: 5px;
-                    left: 26px;
+                    top: 4px;
+                    left: 19px;
                     color: $white-color;
                 }
             }

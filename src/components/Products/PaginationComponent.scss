@@ -8,6 +8,29 @@
     li{
         list-style: none;
         padding-right: 20px;
+        &:first-child a, &:last-child a{
+            font-size: 0;
+        }
+        &:first-child a:after {
+            content: '\003C';
+            position: $position-absolute;
+            color: $dark-color;
+            font-size: $font-size-18;
+            width: 15px;
+            height: 15px;
+            bottom: 6px;
+            left: -2px;
+        }
+        &:last-child a:after {
+            content: '\003E';
+            position: $position-absolute;
+            color: $dark-color;
+            font-size: $font-size-18;
+            width: 15px;
+            height: 15px;
+            bottom: 6px;
+            left: -4px;
+        }
         &.active{
             a.page-link{
                 text-decoration: underline;
@@ -16,6 +39,7 @@
         a{
             text-decoration: none;
             color: $dark-color;
+            position: relative;
         }
     }
     .disabled{

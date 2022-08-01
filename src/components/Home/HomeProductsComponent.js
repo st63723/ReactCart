@@ -42,29 +42,29 @@ function HomeProductsComponent() {
         <>
             <section className='inner-container'>
                 <div className='home--products'>
-                    <figure onClick={getWomensValue}>
-                        <img src={require('../../assets/images/product01.jpg')} alt='Product' className='home--products__image' tabIndex={0} />
+                    <figure onClick={getWomensValue} className="women--image">
+
                         <figcaption>
                             <span className='home--products__heading'>Shop Women</span>
                             <span className='home--products__description'>Lorem ipsum dolor sit amet</span>
                         </figcaption>
                     </figure>
-                    <figure onClick={getMensValue}>
-                        <img src={require('../../assets/images/product1.jpg')} alt='Product' className='home--products__image' tabIndex={0} />
+                    <figure onClick={getMensValue} className="men--image">
+
                         <figcaption>
                             <span className='home--products__heading'>Shop Men</span>
                             <span className='home--products__description'>Lorem ipsum dolor sit amet</span>
                         </figcaption>
                     </figure>
-                    <figure onClick={getJewelleryValue}>
-                        <img src={require('../../assets/images/product2.jpg')} alt='Product' className='home--products__image' tabIndex={0} />
+                    <figure onClick={getJewelleryValue} className="jewellery--image">
+
                         <figcaption>
                             <span className='home--products__heading'>Shop Jewellery</span>
                             <span className='home--products__description'>Lorem ipsum dolor sit amet</span>
                         </figcaption>
                     </figure>
-                    <figure onClick={getElectronicsValue}>
-                        <img src={require('../../assets/images/product3.jpg')} alt='Product' className='home--products__image' tabIndex={0} />
+                    <figure onClick={getElectronicsValue} className="electronic--image">
+
                         <figcaption>
                             <span className='home--products__heading'>Shop Electronics</span>
                             <span className='home--products__description'>Lorem ipsum dolor sit amet</span>

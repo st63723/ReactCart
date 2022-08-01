@@ -25,18 +25,27 @@
     height: 13px;
     background-size: 100%;
     margin-left: 10px;
+    @include phone-only{
+        float: right;
+    }
+    @include min769x{
+        position: relative;
+        top: 7px;
+    }
+    
 }
 .sh-bag-heading{
     font-family: $muli-semibold;
-    color: $dark-gunmental;
+    color: $dark-color;
     text-align: $t-align-center;
     position: relative;
     &::after{
         content: '';
         width: 100px;
-        height: 12px;
-        border-bottom: 10px solid $primary-color;
+        height: 6px;
+        background-color: $primary-color;
         position: absolute;
+        margin-top: 9px;
         @include phone-only{
             right: 32%;
             top: 50px;
@@ -68,7 +77,10 @@
             }
             @include tablet-portrait{
             width: 150px;
-            height: 200px;
+            height: auto;
+            }
+            @include min1200{
+                width: 120px;
             }
         }
         .bag-product-details{
@@ -77,13 +89,10 @@
             padding-left: 20px;
            
             @include phone-only{
-                width: 65%;
+                width: 62%;
             }
-            @include tablet-portrait{
-                width: 70%;
-            }
-            @include tablet-landscape{
-                width: 200px;
+            @include desktop-md{
+                width: 67%;
             }
             span{
                 &:first-child{
@@ -95,27 +104,34 @@
                         }
                         @include tablet-portrait{
                             font-size: $font-size-20;
+                            line-height: 25px;
                         }
                 }
                 display:block;
-                color: $dark-gunmental;
+                color: $dark-color;
             }
         }
         .product-modify {
             padding-top: 21px;
-            padding-left: 50px;
             a{
                 text-decoration: none;
             }
             @include phone-only{
-               display: $display-none;
+                padding-left: 117px;
             }
             @include tablet-portrait{
-                display: $display-inline;
+                padding-left: 170px;
+            }
+            @include min1200{
+                padding-left: 0;
+            }
+            @include desktop-md{
+                display: inline-block;
+                width: 38%;
             }
             div{
                 font-family: $muli-semibold;
-                color: $dark-gunmental;
+                color: $dark-color;
                 font-size: $font-size-12;
                 margin-bottom: 10px;
                 img {
@@ -127,39 +143,83 @@
                 }
             }
         }
+        .product--details{
+           @include phone-only{
+                width:90%;
+                display: inline-block;
+           }
+           @include min1200{
+                width:58%;
+            }
+            @include desktop-md{
+                width:54%;
+            }
+        }
+        .product--quantity--edit{
+            @include phone-only{
+                width: 100%;
+                display: block;
+            }
+            @include min769x{
+                width: 80%;
+                display: inline-block;
+                vertical-align: top;
+            }
+            @include min1200{
+                width: 38%;
+            }
+            @include desktop-md{
+                width:45%;
+            }
+        }
     }
     .quantity{
-        display: $display-inline;
         @include phone-only{
-            padding-top: 0;
             padding-left: 117px;
          }
          @include tablet-portrait{
-            padding-top: 45px;
-            padding-left: 0px;
+            padding-left: 165px;
+         }
+         @include min1200{
+            padding-left: 0;
+         }
+         @include desktop-md{
+            width: 62%;
+            display: inline-block;
+            padding-left: 20px;
          }
         button{
-            width: 30px;
-            height: 30px;
-            border:1px solid $gray-light;
-            border-radius: 50px;
-            border-radius: 50px;
-            font-size: 22px;
-            color: $dark-gunmental;
-            background: $b-transparent;
-            cursor: pointer;
+            width: 32px;
+                height: 32px;
+                border:2px solid #B5B8BA;
+                border-radius: 50px;
+                border-radius: 50px;
+                font-size: 22px;
+                color: #B5B8BA;
+                cursor: pointer;
+                background-color: #EAEBEB;
+                &:last-child{
+                    background-color: $white-color;
+                }
         }
         input{         
-            height: 40px;
-            border:1px solid $gray-light;
-            border-radius: 10px;
-            background: $b-transparent;
-            margin: 0px 8px;
+                width: 88px;
+                height: 40px;
+                border:2px solid $gray;
+                border-radius: 8px;
+                background: $b-transparent;
+                margin: 0px 8px;
+                text-align: center;
+                color: $dark-color;
+                font-family: $muli-semibold;
             @include phone-only{
-                width: 75px;
+                width: 80px;
             }
             @include tablet-portrait{
                 width: 114px;
+            }
+            @include desktop-md{
+                width: 80px;
             }
         }
     }
@@ -174,7 +234,7 @@
             width: 95%;
         }
         .product--estimation__row{
-            display: $display-block;
+            display: table;
             width: 100%;
             border-bottom: 1px solid $gray-light;
             padding: 20px 15px;
@@ -182,13 +242,28 @@
                 cursor: pointer;
             }
             .product--estimation__left{
-                color: $dark-gunmental;
-                font-size: $font-size-20;
+                color: $dark-color;
+                display: block;
+                @include phone-only{
+                    font-size: 16px;
+                }
+                @include min769x{
+                    font-size: $font-size-20;
+                }
             }
             .product--estimation__right{
-                color: $dark-gunmental;
+                color: $dark-color;
                 font-size: $font-size-14;
-                float: right;
+                color: #72777F;
+                @include phone-only{
+                    float: left;
+                    width: 100%;
+                }
+                @include min769x{
+                    float: right;
+                    width: auto;
+                    margin-top: -22px;
+                }
                 .product--estimation__downarrow{
                     background: url('../../assets/images/chevron-down.png') no-repeat;
                     @include updownarrow;

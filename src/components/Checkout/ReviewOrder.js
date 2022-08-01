@@ -26,11 +26,13 @@ function ReviewOrder() {
   }
   const onSubmit = (data) => {
     navigate('/SuccessfullPage');
-    console.log(data);
+  };
+  const successFullPage = (data) => {
+    navigate('/SuccessfullPage');
   };
   return (
     <>
-      <div className="inner-container shipping--information shipping--method--page payment-method review-order">
+      <div className="inner-container shipping--information shipping--method--page payment-method payment--information--div review-order">
         <h1 className="checkout--heading">Checkout</h1>
         <div className='aem-Grid aem-Grid--12' aria-label="Add Cart Details">
           <div className="aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12">
@@ -49,7 +51,7 @@ function ReviewOrder() {
                     <span className='shipping--information--edit__email'>{getFormShIn.Email}</span>
                     <span className='shipping--information--edit__phonenumber'>{getFormShIn.PhoneNumber}</span>
                   </div>
-                  <div className="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12">
+                  <div className="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12 margin--top--15">
                     <span className='shipping--information--edit__name'>{getFormShIn.FirstName} {getFormShIn.LastName}</span>
                     <span className='shipping--information--edit__address'>{getFormShIn.StreetAddress} <br /> {getFormShIn.StreetAddress2}</span>
                     <span className='shipping--information--edit__city'>{getFormShIn.City}</span>
@@ -89,14 +91,19 @@ function ReviewOrder() {
               {/* Added Cart items list start*/}
               <OrderItems />
               {/* Added Cart items list end*/}
-              <div className='checkout--button'>
-                <input type='submit' className='blue--button' value="PLACE ORDER" />
-                <p className='terms--conditions'>By clicking confirm order you agree to our Terms and Conditions</p>
-              </div>
+
             </form>
           </div>
           <PriceSummary />
           {/* Cart items Pricing details end*/}
+          <div className='aem-Grid aem-Grid--12' aria-label="Add Cart Details">
+            <div className="aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12">
+              <div className='checkout--button'>
+                <input onClick={successFullPage} className='blue--button' value="PLACE ORDER" />
+                <p className='terms--conditions'>By clicking confirm order you agree to our <span>Terms and Conditions</span></p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

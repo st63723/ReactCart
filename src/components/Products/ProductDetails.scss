@@ -9,7 +9,7 @@
     font-size: $font-size-36;
     margin: 0;
     margin-top: 15px;
-    line-height: 42px;
+    line-height: 45px;
 }
 @mixin HeartIconProperties{
     background-repeat: no-repeat;
@@ -28,7 +28,7 @@
         padding-top:20px;
         
     }
-    @include tablet-landscape{
+    @include min1200{
         padding-left: 8%;
 
     }
@@ -36,6 +36,16 @@
         img {
             width: 100%;
             height: 120px;
+            box-shadow: 1px 0px 3px 0px #ccc;
+            padding: 8px;
+            width: 80px;
+            height: 90px;
+            &:first-child {
+                border-bottom: 3px solid $primary-color;
+            }
+            &:not(:nth-child(1)){
+                opacity: .3;
+            }
         }  
     }
     .product-image{
@@ -54,14 +64,20 @@
             }
         }       
         img {
-            padding-left: 10px;
+            margin-left: 10px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            box-shadow: 1px 0px 3px 0px #ccc;
             @include phone-only{
-                width: 100%;
+                width: 280px;
             }
             @include min480{
                 width: 300px;
             }
             @include min769x{
+                width: 81%;
+            }
+            @include min1200{
                 width: 100%;
             }
         }
@@ -71,6 +87,9 @@
             @include color-decoration;
             padding-right: 4px;
             padding-left: 4px;
+            &:last-child{
+                color: #767B7F;
+            }
         }
     }
     .details{
@@ -78,13 +97,16 @@
             padding-left:0px;
         }
         @include tablet-portrait{
-            padding-left:25px;
+            padding-left:0px;
+        }
+        @include min1200{
+            padding-left:40px;
         }
         .product-name{
             @include phone-only{
                 @include product-name-css;
                 font-size: 24px;
-                line-height: 35px;
+                line-height: 30px;
             }
             @include min769x{
                 @include product-name-css;
@@ -99,7 +121,11 @@
         .product-rating{
             @include color-fontfamily;
             font-size: $font-size-14;
-            margin-bottom: 10px;;
+            margin-bottom: 10px;
+            .product-rating_number{
+                text-decoration: underline;
+                margin-left: 8px;
+            }
         }
         .description{
             color: $dark-color;
@@ -155,22 +181,29 @@
                 }  
             }
             button{
-                width: 30px;
-                height: 30px;
-                border:1px solid $gray;
+                width: 32px;
+                height: 32px;
+                border:2px solid #B5B8BA;
                 border-radius: 50px;
                 border-radius: 50px;
                 font-size: 22px;
-                color: $dark-color;
+                color: #B5B8BA;
                 cursor: pointer;
+                background-color: #EAEBEB;
+                &:last-child{
+                    background-color: $white-color;
+                }
             }
             input{
                 width: 114px;
                 height: 40px;
-                border:1px solid $gray-light;
+                border:2px solid $gray;
                 border-radius: 8px;
                 background: $b-transparent;
                 margin: 0px 8px;
+                text-align: center;
+                color: $dark-color;
+                font-family: $muli-semibold;
             }
         }
         .addToCart{
@@ -182,16 +215,21 @@
                 text-align: left;
             }  
             button{
-                width:318px;
                 height:40px;
                 background-color: $primary-color;
-                border-radius: 28px;
+                border-radius: 10px;
                 color: #fff;
                 font-size: $font-size-14;
                 font-family: $muli-semibold;
                 text-align: $t-align-center;
                 border: 0px;
                 cursor: pointer;
+                @include phone-only{
+                    width:280px;
+                }
+                @include min769x{
+                    width:318px;
+                }  
             }    
         }
         .save--share {
@@ -248,6 +286,11 @@
         margin-top: 20px;
     }
     @include min769x{
+        padding-left: 0%;
+        text-align: inherit;
+        margin-top: 40px;
+    }
+    @include min1200{
         padding-left: 8%;
         text-align: inherit;
         margin-top: 40px;
@@ -275,12 +318,36 @@
     }
     .product-description{
         @include color-fontfamily();
-        font-size: $font-size-20;
         margin: 0;
-    padding-top: 15px;
+        padding-top: 15px;
+        @include phone-only{
+            font-size: $font-size-16;
+        }
+        @include min769x{
+            font-size: $font-size-20;
+        }
     }
     p{
         color: $dark-color;
+        position: relative;
+        text-align: left;
+        &:after{
+            content: '';
+            width: 102px;
+            height: 8px;
+            background-color: $primary-color;
+            position: absolute;
+            bottom: -36px;
+            @include phone-only{
+                left: 37%;
+            }
+            @include min600{
+                left: 43%;
+            }
+            @include min769x{
+                left: 0;
+            }
+        }
     }
     .details{
         @include color-fontfamily();

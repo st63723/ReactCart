@@ -2,6 +2,25 @@
 .home--shop--devices{
     .home--shop--devices_banner{
         overflow-x: hidden;
+        background-image: url(../../assets/images/adventure-banner.jpg);
+       
+        background-repeat: no-repeat;
+        
+        @include phone-only{
+            height: 210px;
+            background-position: -223px -43px;
+        }
+        @include min480{
+            height: 260px; 
+        }
+        @include min769x{
+            border-top: 5px solid #fff;
+            border-bottom: 5px solid #fff;
+            height: 430px;
+            background-position: 0;
+            background-size: cover;
+        }
+       
         img{
             height: 100%;
             @include phone-only{
@@ -19,37 +38,55 @@
         @include phone-only{
             text-align: center;
         }
-        @include min769x{
+        
+        @include min1200{
             text-align: left;
         }
         article{
             display: $display-flex;
             justify-content: $t-align-center;
             align-items: $t-align-center;
-            height: 340px;
+            
             background-color: $dark-color;
             color: $white-color;
             @include phone-only{
-                width: 95%;
+                width: 91%;
                 margin: -25px auto 0 auto;
+                height: 340px;
             }
             @include min769x{
                 width: 100%;
                 margin: initial;
+                height: 430px;
             }
+           
         }
         .home--shop--devices__row {
-            width: 80%;
+            @include min769x{
+                width: 90%;
+            }
+            @include tablet-landscape{
+                width: 100%;
+            }
+            @include min1200{
+                width: 89%;
+            }
+            @include desktop-md{
+                width: 83%;
+            }
             .transparent--button--mod{
                 color: $white-color;
                 border-color: $white-color;
                 margin-top: 20px;
+                width: 180px;
+                height: 40px;
+                padding:0px;
             }
             h2{
                 margin: 0;
                 @include phone-only{
                     font-size: $font-size-36;
-                    line-height: 40px;
+                    line-height: 45px;
                 }
                 @include min1200{
                     font-size: $font-size-48;
@@ -63,8 +100,8 @@
             }
         }
         .home--shop--devices__row__location {
-            border-bottom: 5px solid $primary-color;
-            width: 55px;
+            border-bottom: 8px solid $primary-color;
+            width: 102px;
             text-align: $t-align-center;
             position: $position-absolute;
             @include phone-only{
@@ -73,8 +110,8 @@
                 top: -45px;
             }
             @include min769x{
-                bottom: 36px;
-                left: -28px;
+                bottom: 19px;
+                left: -51px;
                 top: initial;
             }
             img{
@@ -83,3 +120,17 @@
         }
     }
 }    
+
+.home--shop--devices--row{
+    .inner-container{
+        @include phone-only{
+            padding:0;
+        }
+        @include min769x{
+            padding: 0 18px;
+        }
+        @include tablet-landscape{
+            padding: 0;
+        }
+    }
+}

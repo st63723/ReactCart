@@ -10,6 +10,7 @@
             @include color-decoration;
             padding-right: 4px;
             padding-left: 4px;
+            color: $dark-light;
         }
     }
 }
@@ -58,7 +59,7 @@
     @include phone-only{
         padding: 0px 0px 0px 19px;
     }
-    @include tablet-portrait{
+    @include min769x{
         box-shadow: 0px 0px 0px #00000026;
         padding: 0px;
         margin-top: 30px;
@@ -66,7 +67,7 @@
     .filters-mobile{
         padding-bottom: 6px;
         .filter-title {
-            background: #E5E5E7;
+            // background: #E5E5E7;
             padding: 13px 15px 13px 20px;
             /* background-color: rgba(229, 229, 231, 0.25); */
             color: #1D1D1B;
@@ -137,7 +138,7 @@
             }
         }
         a{
-            color: #181C24;
+            color: $grayd2;
             font-size: $font-size-14;
             display: $display-block;
             padding-top: 8px;
@@ -149,12 +150,56 @@
     .hide--women{
         display: none;
     }
-    .clear--all {
-        margin: 20px 0;
-        background: #555;
-        border: 0;
-        color: #fff;
-        border-radius: 6px;
-        padding: 8px 12px;
+    .mobile--view{
+        @include phone-only{
+            display: block;
+        }
+        @include min769x{
+            display: none;
+        }
+    }
+    .clear--all--row {
+        margin-top: 10px;
+        text-align: center;
+        .clear--all {
+            margin: 15px 0;
+            background: $primary-color;
+            border: 0;
+            width: 190px;
+            height: 40px;
+            color: #fff;
+            border-radius: 10px;
+            padding: 8px 12px;
+            text-transform: uppercase;
+        }
+        
+    }
+    
+    .clear--all--row--link{
+        position: relative;
+        .clear--all--link{
+            color: $grayd2;
+            font-size: 14px;
+            font-family: $muli-semibold;
+            text-decoration: underline;
+            display: block;
+            cursor: pointer;
+            @include phone-only{  
+                padding-left: 20px;
+            }
+            @include min769x{  
+                padding-left: 0px;
+            }
+        }
+    }
+    aside {
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 11px;
+        @include phone-only{  
+            margin-left: 20px;
+        }
+        @include min769x{  
+            margin-left: 0px;
+        }
     }
 }

@@ -16,6 +16,7 @@
         border-radius: 2px;
         span{
             display: $display-block;
+            color: #535965;
         }
         .shipping--information--edit_heading {
             font-family: $muli-semibold;
@@ -27,6 +28,12 @@
             float: right;
             color: $primary-color;
             width: 55px;
+            @include phone-only{
+                width: 12px;
+            }
+            @include min600{
+                width: 55px;
+            }
             .edit--icon {
                 width: 16px;
                 margin-right: 8px;
@@ -34,6 +41,13 @@
             .edit--title {
                 font-family: $muli-semibold;
                 float: right;
+                color: $primary-color;
+                @include phone-only{
+                    display: none;
+                }
+                @include min600{
+                    display: block;
+                }
             }
         }
     }
@@ -61,13 +75,43 @@
                 width: 25px;
                 margin-top: -5px;
                 margin-right: 8px;
+                @include phone-only{
+                    height: 55px;
+                }
+                @include min375{
+                    height:44px;
+                }
             }
     }
    }
    form{
-    margin-right: 20px;
+    @include phone-only{
+        margin-right: 0px;
+    }
+    @include min769x{
+        margin-right: 20px;
+    }
    }
    .pricing-summary-box {
+       @include phone-only{
+        margin-top: 5px;
+       }
+       @include min769x{
         margin-top: 55px;
+       }
+    }
+    .radio--group{
+        label{
+            font-family: $muli-normal;
+            color: $dark-color;
+        }
+    }
+    .margin--top--15{
+        @include phone-only{
+            margin-top: 15px;
+        }
+        @include min769x{
+            margin-top: 0px;
+        }
     }
 }   

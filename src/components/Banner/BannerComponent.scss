@@ -3,6 +3,25 @@
 .banner {
     display: flex;
     position: relative;
+    @include phone-only{
+        &::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(255,255,255, 0) 24%, rgba(255,255,255,0.7) 43%);
+        }
+    }
+    @include tablet-portrait{
+        &::after{
+            content: '';
+            position: absolute;
+            background: transparent;
+            width: 100%;
+            height: 100vh;
+            background: transparent;
+        }
+    }
     .banner__image{
         background: url('../../assets/images/home_banner.jpg') no-repeat;
         @include phone-only{
@@ -19,11 +38,23 @@
             display: inline-flex;
             width: 50%;
             height: 400px;
+            background-size: auto;
+            background-position: top;
+        }
+        @include desktop-md{
+            height: 500px;
+            background-position: top;
+            background-size: auto;
+        }
+        @include desktop-lg{
+            background-position: top;
+            background-size:cover;
         }
     }
     .banner__text{
         justify-content: center;
         align-items: center;
+        z-index: 1;
         @include phone-only{
             display: $display-flex;
             width: 100%;
@@ -31,7 +62,7 @@
             height: auto;
             background-color: transparent;
             text-align: center;
-            bottom: 10%;
+            bottom: 50px;
         }
         @include tablet-portrait{
             display: inline-flex;
@@ -39,22 +70,25 @@
             height: 400px;
             position: relative;
             background-color: $gray-light;
+            bottom: 0;
+        }
+        @include min1200{
             text-align: left;
+            padding: 30px;
+        }
+        @include desktop-md{
+            height: 500px;
         }
         div{
-            width: 80%;
+            @include desktop-md{
+                width: 80%;
+            }
             h1{
                 color: $dark-color;
                 margin:0px;
                 @include phone-only{
-                    font-size: $font-size-30;
-                    line-height: 35px;
-                    text-shadow: 1px 1px 0px #fff;
-                }
-                @include min480{
                     font-size: $font-size-36;
                     line-height: 45px;
-                    text-shadow: 0px opx 0px #fff;
                 }
                 @include tablet-landscape{
                     font-size: $font-size-48;
@@ -63,7 +97,7 @@
             }
             p{
                 @include phone-only{
-                    margin: 0;
+                    margin: 12px 0 32px 0;
                 }
                 @include min480{
                     margin: 15px 0px;
@@ -73,6 +107,7 @@
                 
                 @include phone-only{
                     margin-top:0;
+                    width: 220px;
                 }
                 @include min480{
                     margin-top:15px;

@@ -4,7 +4,7 @@
     display: inline-flex;
     justify-content: $t-align-center;
     align-items: $t-align-center;
-    border-radius: 28px;
+    border-radius: 10px;
     border:0;
     color: $white-color;
     @include phone-only{
@@ -32,7 +32,7 @@
     }
     h6{
         font-family: $muli-semibold;
-        color: $dark-gunmental;
+        color: $dark-color;
         font-size: $font-size-20;
         
         @include phone-only{
@@ -45,7 +45,7 @@
         }
     }
     div{
-        color: $dark-gunmental;
+        color: $dark-color;
         padding-bottom: 10px;
         &:last-child{
             font-family: $muli-semibold;
@@ -58,6 +58,7 @@
     }
     .checkout--link{
         text-decoration: none;
+        display: block;
     }
     .checkout{
         background-color: $primary-color;

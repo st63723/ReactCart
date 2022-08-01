@@ -39,7 +39,7 @@ function ShippingMethod() {
                 <div className='aem-Grid aem-Grid--12 form--row'>
                   <h4 className='shipping--information--edit_heading'>Shipping Information</h4>
                   <div className="edit" onClick={editValue}>
-                    <img src={EditIcon} className="edit--icon" alt="Edit Icon" />
+                    <img src={require('../../assets/images/edit-icon.png')} className="edit--icon" alt="Edit Icon" />
                     <span className="edit--title" role="Edit Cart Item">Edit</span>
                   </div>
                 </div>
@@ -48,7 +48,7 @@ function ShippingMethod() {
                     <span className='shipping--information--edit__email'>{getFormShIn.Email}</span>
                     <span className='shipping--information--edit__phonenumber'>{getFormShIn.PhoneNumber}</span>
                   </div>
-                  <div className="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12">
+                  <div className="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12 margin--top--15">
                     <span className='shipping--information--edit__name'>{getFormShIn.FirstName} {getFormShIn.LastName}</span>
                     <span className='shipping--information--edit__address'>{getFormShIn.StreetAddress} <br /> {getFormShIn.StreetAddress2}</span>
                     <span className='shipping--information--edit__city'>{getFormShIn.City}</span>
@@ -59,19 +59,19 @@ function ShippingMethod() {
               <h4 className='shipping--information-heding'>2. Shipping Method</h4>
               <div className='aem-Grid aem-Grid--12 form--row'>
                 <div className="aem-GridColumn aem-GridColumn--default--12 shipping--method">
-                  <div className="form--group">
+                  <div className="form--group radio--group">
                     <input type="radio" className='standardShipping' id="standardShipping" name='standardShipping' value="Standard Shipping (4-8 business days via USPS) FREE" {...register("ShippingMethod", {
                       required: "Select Shipping Method"
                     })} />
                     <label for="standardShipping"> Standard Shipping (4-8 business days via USPS) FREE</label>
                   </div>
-                  <div className="form--group">
+                  <div className="form--group radio--group">
                     <input type="radio" className='standardShipping' id='expressDeliver' name='expressDeliver' value="Express Delivery ( 2-5 business days via USPS ) $17.95" {...register("ShippingMethod", {
                       required: "Select Shipping Method"
                     })} />
                     <label for="expressDeliver">Express Delivery ( 2-5 business days via USPS ) $17.95</label>
                   </div>
-                  <div className="form--group">
+                  <div className="form--group radio--group">
                     <input type="radio" className='standardShipping' id='nextDayDeliver' name='nextDayDeliver' value="Next Day Delivery (Next business days via FedEx) $53.61" {...register("ShippingMethod", {
                       required: "Select Shipping Method"
                     })} />

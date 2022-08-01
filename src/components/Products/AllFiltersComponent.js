@@ -78,7 +78,7 @@ function AllFiltersComponent() {
                     {/* Left Filters section start */}
                     <div className={`${hideLightbox ? "products__show--lightbox" : "products__hide--lightbox"}`}>
                         <span className='products__cross--mobile' onClick={() => setHideLightbox(false)}> X </span>
-                        <div className="products__filters aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--12 min768px">
+                        <div className="products__filters aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--12">
                             <div className="filters">
                                 <div className="filters-mobile">
                                     <div className='filter-title'>
@@ -86,15 +86,12 @@ function AllFiltersComponent() {
                                     </div>
                                 </div>
                                 <div className='filter-title filters-desktop'>Filters</div>
-                                <div className="filter-sub-title">Category</div>
-                                <aside>
-                                    <FilterComponent />
-                                </aside>
+                                <FilterComponent />
                             </div>
                         </div>
                     </div>
 
-                    <div className="products__filters aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--12 min768px">
+                    <div className="products__filters aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--12 desktop--view">
                         {/* Page Navigation section */}
                         <nav className="crumbs">
                             <Link to="/" aria-label='Clothing url'>Clothing</Link> /
@@ -108,14 +105,18 @@ function AllFiltersComponent() {
                                 </div>
                             </div>
                             <div className='filter-title filters-desktop'>Filters</div>
-                            <div className="filter-sub-title">Category</div>
-                            <aside>
-                                <FilterComponent />
-                            </aside>
+
+                            <FilterComponent />
                         </div>
                     </div>
                     {/* Left Filters section end */}
-                    <div className="aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12 min768pxx">
+                    <div className="aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12">
+                        {/* Page Navigation section */}
+                        <nav className="crumbs--filters">
+                            <Link to="/" aria-label='Clothing url'>Clothing</Link> /
+                            <Link to="/" aria-label='Outerwear url'>Outerwear</Link>
+                        </nav>
+                        {/* filters section start */}
                         {/* Filter resultsand sort products for mobile view */}
                         <div className='filters--sort mobile--view'>
                             <span className='filters--sort__results' onClick={() => setHideLightbox(true)}>
@@ -133,7 +134,7 @@ function AllFiltersComponent() {
                         <div className="aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--phone--12">
                             <div className='aem-Grid aem-Grid--12'>
                                 <div className="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12">
-                                    <span className='dark--gunmental semi-bold'> {products.length} Results</span>
+                                    <span className='dark--gunmental products--count'> {products.length} Results</span>
                                 </div>
                                 <div className="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--hide">
                                     <select onChange={(e) => dropdownChange(e)}>

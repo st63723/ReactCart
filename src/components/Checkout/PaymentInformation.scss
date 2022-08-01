@@ -12,7 +12,7 @@
         label {
             display: inline-block !important;
             vertical-align: top;
-            padding-top: 8px;
+            padding-top: 12px;
             margin-left: 6px;
         }
     }
@@ -23,11 +23,30 @@
         .margin-bottom-20{
             margin-bottom: 15px;
         }
+        .padding-right-20-mobile{
+            @include phone-only{
+                padding-right: 20px;
+            }
+        }
         .errorMsg{
             margin-top:0;
         }
         .question--mark img {
-            padding-top: 26px;
+            width: 21px;
+            height: 21px;
+            margin-top: 28px;
+        }
+        .padding--right--zero{
+             padding-right: 0;
+        }
+        .form--group{
+            .cc--card--paypal{
+                color: $dark-color;
+                font-family: $muli-normal;
+            }
+            .font--normal{
+                font-family: $muli-normal;
+            }
         }
     }
     .paypal--border{
@@ -42,4 +61,48 @@
 }
 .hide--card--details{
     display: none;
+}
+.payment--information--div{
+    .guest--checkout{
+        margin-bottom: 30px;
+    }
+    .pricing-summary{
+        margin-top: 33px;
+        h6{
+            margin: 0px 0px 10px 0px;
+        }
+    }
+    .checkout--heading{
+        position: relative;
+        
+        &:after {
+            height: 6px;
+            @include phone-only{
+                right: 29px;
+                top: 61px;
+            }
+            @include tablet-portrait{
+                right: 45px;
+                top: 80px;
+                height: 8px;
+            }
+        }
+        @include phone-only{
+            width: 165px;
+        }
+        @include tablet-portrait{
+            width: 216px;
+            margin:20px auto 55px auto;
+        }
+    }
+}
+.review-order{
+    .pricing-summary{
+        @include phone-only{
+            margin-top: 20px;
+        }
+        @include min769x{
+            margin-top: 33px;
+        }
+    }
 }

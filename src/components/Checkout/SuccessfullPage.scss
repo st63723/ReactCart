@@ -6,21 +6,23 @@
     }
     .order--heading{
         font-family: $muli-semibold;
-        color: $dark-gunmental;
+        color: $dark-color;
         position: relative;
         &::after{
             content: '';
             width: 100px;
-            height: 12px;
-            border-bottom: 10px solid $primary-color;
+            
+            background-color: $primary-color;
             position: absolute;
             @include phone-only{
                 right: 93px;
-                top: 48px;
+                top: 60px;
+                height: 6px;
             }
             @include tablet-portrait{
                 right: 147px;
-                top: 69px;
+                top: 85px;
+                height: 8px;
             }
         }
         @include phone-only{
@@ -96,7 +98,14 @@
             padding: 0px 25px;
         }
     }
+    .shipping--Method--edit{
+        margin-top: 12px;
+    }
 }
 .terms--conditions{
     padding-top: 15px;
+    span{
+        text-decoration: underline;
+        font-family: $muli-semibold;
+    }
 }

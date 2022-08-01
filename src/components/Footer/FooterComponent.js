@@ -51,7 +51,7 @@ function FooterComponent() {
                 <section className='terms--policy' aria-label='Terms and Policies'>
                     <div className='inner-container'>
                         <div className='aem-Grid aem-Grid--12'>
-                            <div className="terms--policy__footer-logo aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--hide">
+                            <div className="terms--policy__footer-logo aem-GridColumn aem-GridColumn--default--2 aem-GridColumn--phone--hide">
                                 <img src={require('../../assets/images/venia-footer-logo.png')} alt='Venia Logo' />
                             </div>
                             <div className="terms--policy__footer--links aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--12 mobile-view">
@@ -60,8 +60,8 @@ function FooterComponent() {
                                     <Link to="/">Privacy Policy</Link>
                                 </nav>
                             </div>
-                            <div className="terms--policy__company--add aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--12">
-                                © Company Name Address Ave, City Name, State ZIP
+                            <div className="terms--policy__company--add aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12">
+                                © Company Name Address Ave, City Name, State
                             </div>
                             <div className="terms--policy__footer--links aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--hide">
                                 <nav>

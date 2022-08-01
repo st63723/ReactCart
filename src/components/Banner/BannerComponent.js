@@ -21,7 +21,7 @@ function BannerComponent() {
                     <article className='banner__text'>
                         <div>
                             <h1>Shop the new <br />Signature Collection</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lobortis mattis aliquam faucibus purus.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
                             <button onClick={shopNow} className='blue--button'>SHOP NOW</button>
                         </div>
                     </article>

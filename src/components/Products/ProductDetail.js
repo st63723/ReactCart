@@ -88,13 +88,15 @@ function ProductDetail() {
                 {thisProduct.map((product) => (
                     <><div className='product-details aem-Grid aem-Grid--12' aria-label="Product Details" key={product}>
                         {/* Product Thumbnails start*/}
-                        <div className="product-thumbnails aem-GridColumn aem-GridColumn--default--1 aem-GridColumn--phone--hide">
+                        <div className="product-thumbnails aem-GridColumn aem-GridColumn--tablet--1 aem-GridColumn--default--1 aem-GridColumn--phone--hide">
+                            <img src={product.image} alt="Product Thumbnail" />
+                            <img src={product.image} alt="Product Thumbnail" />
                             <img src={product.image} alt="Product Thumbnail" />
                             <img src={product.image} alt="Product Thumbnail" />
                         </div>
                         {/* Product Thumbnails end */}
                         {/* Product Big image */}
-                        <div className="product-image aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--12">
+                        <div className="product-image aem-GridColumn aem-GridColumn--tablet--4 aem-GridColumn--default--4 aem-GridColumn--phone--12">
                             <nav className="crumbs mobile-view">
                                 <Link to="/" aria-label='Clothing url'>Clothing</Link> /
                                 <Link to="/" aria-label='Womens url'>Women's</Link> /
@@ -103,7 +105,7 @@ function ProductDetail() {
                             <img src={product.image} alt="Product Image" />
                         </div>
                         {/* Product all details start */}
-                        <div className="details aem-GridColumn aem-GridColumn--default--5 aem-GridColumn--phone--12" >
+                        <div className="details aem-GridColumn aem-GridColumn--tablet--7 aem-GridColumn--default--5 aem-GridColumn--phone--12" >
                             <nav className="crumbs desktop-view">
                                 <Link to="/" aria-label='Clothing url'>Clothing</Link> /
                                 <Link to="/" aria-label='Womens url'>Women's</Link> /
@@ -112,8 +114,8 @@ function ProductDetail() {
                             <h2 className="product-name" role="Product Name">{product.title}</h2>
                             <h6 className="product-price" role="Product Price">${product.price}</h6>
                             <div className="product-rating" role="Product star Rating">
-                                <Rating readonly fillColor="#172026" ratingValue={(product.rating.rate * 20)} /* Available Props */ />
-                                &nbsp; ({product.rating.count})</div>
+                                <Rating readonly size="16px" fillColor="#172026" ratingValue={(product.rating.rate * 20)} /* Available Props */ />
+                                <span className="product-rating_number">({product.rating.count})</span></div>
                             <div className="description" role="Product Description">
                                 <ReadMoreComponent>
                                     {product.description}

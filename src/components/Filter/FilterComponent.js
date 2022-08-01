@@ -91,25 +91,32 @@ function FilterComponent() {
   }
   return (
     <>
-
-      {toppings.map(({ name }, index) => {
-        return (
-          <div role="group" key={index}>
-            <label>
-              <input
-                type="checkbox"
-                className='checkbox-field'
-                id={`custom-checkbox-${index}`}
-                name={name}
-                value={name}
-                checked={checkedState[index]}
-                onChange={() => handleOnChange(index)}
-              />
-              {name}</label>
-          </div>
-        );
-      })}
-      <input type="button" value="Clear All" onClick={clearAll} className='clear--all' />
+      <div className='clear--all--row--link'>
+        <span onClick={clearAll} className='clear--all--link'>Clear All</span>
+      </div>
+      <div className="filter-sub-title">Category</div>
+      <aside>
+        {toppings.map(({ name }, index) => {
+          return (
+            <div role="group" key={index}>
+              <label>
+                <input
+                  type="checkbox"
+                  className='checkbox-field'
+                  id={`custom-checkbox-${index}`}
+                  name={name}
+                  value={name}
+                  checked={checkedState[index]}
+                  onChange={() => handleOnChange(index)}
+                />
+                {name}</label>
+            </div>
+          );
+        })}
+      </aside>
+      <div className='clear--all--row mobile--view'>
+        <button type="button" value="Clear All" onClick={clearAll} className='clear--all'>see {products.length} results</button>
+      </div>
     </>
   )
 }

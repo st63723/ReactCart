@@ -95,7 +95,7 @@ function HeaderComponent() {
                         <div className='mobile-view'>  {/* show only in mobile */}
                             <div className='aem-Grid aem-Grid--12'>
                                 {/* menu start for mobile */}
-                                <div className="aem-GridColumn aem-GridColumn--default--1">
+                                <div className="aem-GridColumn aem-GridColumn--default--2">
                                     <div className='menuicon'>
                                         <img src={require('../../assets/images/menu-icon.png')} alt='menu icon' onClick={() => setHideLightbox(true)} tabIndex={0} />
                                     </div>
@@ -123,7 +123,7 @@ function HeaderComponent() {
                                 </div>
                                 {/* menu end for mobile */}
                                 {/* logo */}
-                                <div className="aem-GridColumn aem-GridColumn--default--9">
+                                <div className="aem-GridColumn aem-GridColumn--default--8">
                                     <span className="logo" aria-label='Venia Logo' tabIndex={0}>
                                         <Link to="ReactCart" aria-label='Link to Home Page'>
                                             <img src={require('../../assets/images/venia-logo.png')} alt='Venia Logo' />

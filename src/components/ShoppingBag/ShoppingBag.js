@@ -66,7 +66,7 @@ function ShoppingBag() {
                             {cartItems.map((product) => (
                                 <>
                                     <div className="shopping-thumbnails aem-Grid aem-Grid--12" >
-                                        <div className="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12" role="Added Cart items" key={product.id}>
+                                        <div className="product--details" role="Added Cart items" key={product.id}>
                                             <img src={product.image} alt="Product Image" />
                                             <div className="bag-product-details" role="Added Cart item Details">
                                                 <span className="bag-p-name">{product.title}</span>
@@ -75,12 +75,13 @@ function ShoppingBag() {
                                                 <span className="bag-p-price">${product.price}</span>
                                             </div>
                                         </div>
-                                        <div className="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12">
+                                        <div className="product--quantity--edit">
                                             <div className="quantity" role="Product Quantity">
                                                 <button type="button" onClick={() => decrement(product)}> - </button>
                                                 <input type="number" readOnly id={product.id} value={product.quantity} />
                                                 <button type="button" onClick={() => increment(product)}> + </button>
                                             </div>
+
                                             <div className="product-modify" role="Product Modification">
                                                 <Link to={`/products/${product.id}`}>
                                                     <div className="edit">

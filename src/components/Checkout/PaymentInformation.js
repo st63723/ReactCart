@@ -54,7 +54,7 @@ function PaymentInformation() {
   }, []);
   return (
     <>
-      <div className="inner-container shipping--information shipping--method--page payment-method">
+      <div className="inner-container shipping--information shipping--method--page payment-method payment--information--div">
         <h1 className="checkout--heading">Checkout</h1>
         <div className='aem-Grid aem-Grid--12' aria-label="Add Cart Details">
           <div className="aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12">
@@ -64,7 +64,7 @@ function PaymentInformation() {
                 <div className='aem-Grid aem-Grid--12 form--row'>
                   <h4 className='shipping--information--edit_heading'>Shipping Information</h4>
                   <div className="edit" onClick={ShippingInformationEdit}>
-                    <img src={EditIcon} className="edit--icon" alt="Edit Icon" />
+                    <img src={require('../../assets/images/edit-icon.png')} className="edit--icon" alt="Edit Icon" />
                     <span className="edit--title" role="Edit Cart Item">Edit</span>
                   </div>
                 </div>
@@ -73,7 +73,7 @@ function PaymentInformation() {
                     <span className='shipping--information--edit__email'>{getFormShIn.Email}</span>
                     <span className='shipping--information--edit__phonenumber'>{getFormShIn.PhoneNumber}</span>
                   </div>
-                  <div className="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12">
+                  <div className="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12 margin--top--15">
                     <span className='shipping--information--edit__name'>{getFormShIn.FirstName} {getFormShIn.LastName}</span>
                     <span className='shipping--information--edit__address'>{getFormShIn.StreetAddress} <br /> {getFormShIn.StreetAddress2}</span>
                     <span className='shipping--information--edit__city'>{getFormShIn.City}</span>
@@ -85,7 +85,7 @@ function PaymentInformation() {
                 <div className='aem-Grid aem-Grid--12 form--row'>
                   <h4 className='shipping--information--edit_heading'>Shipping Method</h4>
                   <div className="edit" onClick={ShippingMethodEdit}>
-                    <img src={EditIcon} className="edit--icon" alt="Edit Icon" />
+                    <img src={require('../../assets/images/edit-icon.png')} className="edit--icon" alt="Edit Icon" />
                     <span className="edit--title" role="Edit Cart Item">Edit</span>
                   </div>
                 </div>
@@ -97,13 +97,13 @@ function PaymentInformation() {
               </div>
               <h4 className='payment--information--heding'>2. Payment Information</h4>
               <div className='payment--information'>
-                <div className='aem-Grid aem-Grid--12 margin-bottom-20'>
+                <div className='aem-Grid aem-Grid--12'>
                   <div className="aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12">
                     <div className="form--group credit--card">
                       <input type="radio" id='creditCart' onClick={selectPayment} className='creditcard' value="Credit Card" name='BillingPayment' {...register("BillingPayment", {
                         required: "true"
                       })} />
-                      <label for="creditCart"> Credit Card</label>
+                      <label for="creditCart" className='cc--card--paypal'> Credit Card</label>
                     </div>
                   </div>
                 </div>
@@ -149,8 +149,8 @@ function PaymentInformation() {
                     </div>
                   </div>
                   <div className='aem-Grid aem-Grid--12 margin-bottom-20'>
-                    <div className="aem-GridColumn aem-GridColumn--default--3">
-                      <div className="form--group">
+                    <div className="aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--6">
+                      <div className="form--group padding-right-20-mobile">
                         <label> Expiration Date</label>
                         <input placeholder=''
                           name="ExpirationDate" type="date" value="2018-07-22"
@@ -164,8 +164,8 @@ function PaymentInformation() {
                         {errors.ExpirationDate && <p className="errorMsg">{errors.ExpirationDate.message}</p>}
                       </div>
                     </div>
-                    <div className="aem-GridColumn aem-GridColumn--default--2">
-                      <div className="form--group">
+                    <div className="aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--phone--4">
+                      <div className="form--group padding--right--zero">
                         <label> CVV</label>
                         <input placeholder=''
                           name="CVV" type="number" {...register("CVV", {
@@ -182,7 +182,7 @@ function PaymentInformation() {
                         {errors.CVV && <p className="errorMsg">{errors.CVV.message}</p>}
                       </div>
                     </div>
-                    <div className="aem-GridColumn aem-GridColumn--default--1 question--mark">
+                    <div className="aem-GridColumn aem-GridColumn--default--1 aem-GridColumn--phone--2 question--mark">
                       <img src={require('../../assets/images/question-mark-icon.png')} alt='Question Mark Icon' />
                     </div>
                   </div>
@@ -195,7 +195,7 @@ function PaymentInformation() {
                             message: 'Select Checkbox If Billing address Same'
                           }
                         })} value="Billing address same as shipping address" />
-                        <label for="standardShipping"> Billing address same as shipping</label>
+                        <label for="standardShipping" className='font--normal'> Billing address same as shipping</label>
                         {errors.BillingAddress && <p className="errorMsg">{errors.BillingAddress.message}</p>}
                       </div>
                     </div>
@@ -207,7 +207,7 @@ function PaymentInformation() {
                       <input type="radio" className='creditcard' onClick={selectPayment} name='BillingPayment' value="Paypal" {...register("BillingPayment", {
                         required: "Select Credit Card or Paypal"
                       })} />
-                      <label for="standardShipping"> Paypal</label>
+                      <label for="standardShipping" className='cc--card--paypal'> Paypal</label>
                       {errors.BillingPayment && <p className="errorMsg">{errors.BillingPayment.message}</p>}
                     </div>
                   </div>

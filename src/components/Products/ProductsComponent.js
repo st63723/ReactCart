@@ -77,14 +77,14 @@ function ProductsComponent() {
                     {/* Left Filters section start */}
                     <div className={`${hideLightbox ? "products__show--lightbox" : "products__hide--lightbox"}`}>
                         <span className='products__cross--mobile' onClick={() => setHideLightbox(false)}> X </span>
-                        <div className="products__filters aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--12 min768px">
+                        <div className="products__filters aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--12">
                             <aside>
                                 <FilterComponent />
                             </aside>
                         </div>
                     </div>
 
-                    <div className="products__filters aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--12 min768px">
+                    <div className="products__filters aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--12">
                         {/* Page Navigation section */}
                         <nav className="crumbs">
                             <Link to="/" aria-label='Clothing url'>Clothing</Link> /
@@ -120,7 +120,7 @@ function ProductsComponent() {
                         </div>
                     </div>
                     {/* Left Filters section end */}
-                    <div className="aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12 min768pxx">
+                    <div className="aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--12">
                         {/* Filter resultsand sort products for mobile view */}
                         <div className='filters--sort mobile--view'>
                             {/*  <span className='filters--sort__results' onClick={() => setHideLightbox(true)}>
@@ -138,7 +138,7 @@ function ProductsComponent() {
                         <div className="aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--phone--12">
                             <div className='aem-Grid aem-Grid--12'>
                                 <div className="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--12">
-                                    <span className='dark--gunmental semi-bold'> {products.length} Results</span>
+                                    <span className='dark--gunmental semi-bold products--count'> {products.length} Results</span>
                                 </div>
                                 <div className="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--hide">
                                     <select onChange={(e) => dropdownChange(e)}>
