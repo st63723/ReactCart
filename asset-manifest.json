@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ReactCart/static/css/main.439b90f1.css",
-    "main.js": "/ReactCart/static/js/main.3a29aea9.js",
+    "main.css": "/ReactCart/static/css/main.a801b0be.css",
+    "main.js": "/ReactCart/static/js/main.61f62290.js",
     "static/media/men-image.jpg": "/ReactCart/static/media/men-image.ee844e7ef1d595400784.jpg",
     "static/media/loader.gif": "/ReactCart/static/media/loader.d9e72f61e7e8047da5b2.gif",
     "static/media/product1.jpg": "/ReactCart/static/media/product1.3f14b9bd3d076452d15f.jpg",
@@ -31,11 +31,11 @@
     "static/media/heart.svg": "/ReactCart/static/media/heart.818e64ed520f0e7e9b9552df8e8f4366.svg",
     "static/media/edit.svg": "/ReactCart/static/media/edit.445dc5915138b5166b630a641f8b0ea8.svg",
     "static/media/facebook.svg": "/ReactCart/static/media/facebook.1d020e027c20a955b3bd6208f2653e5b.svg",
-    "main.439b90f1.css.map": "/ReactCart/static/css/main.439b90f1.css.map",
-    "main.3a29aea9.js.map": "/ReactCart/static/js/main.3a29aea9.js.map"
+    "main.a801b0be.css.map": "/ReactCart/static/css/main.a801b0be.css.map",
+    "main.61f62290.js.map": "/ReactCart/static/js/main.61f62290.js.map"
   },
   "entrypoints": [
-    "static/css/main.439b90f1.css",
-    "static/js/main.3a29aea9.js"
+    "static/css/main.a801b0be.css",
+    "static/js/main.61f62290.js"
   ]
 }
